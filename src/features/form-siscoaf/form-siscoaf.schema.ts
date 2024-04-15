@@ -11,8 +11,8 @@ const envolvidoSchema = z.object({
 
 const ocorrenciaSchema = z.object({
   NumOcorrencia: z.string(),
-  DtInicio: z.string(),
-  DtFim: z.string(),
+  DtInicio: z.date(),
+  DtFim: z.date(),
   AgMun: z.string(),
   AgUF: z.string(),
   VlCred: z.string(),
