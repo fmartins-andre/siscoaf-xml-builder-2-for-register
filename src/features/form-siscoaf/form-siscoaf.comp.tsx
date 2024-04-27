@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { IFormSiscoaf, formSiscoafSchema } from "./form-siscoaf.schema";
 import { formDefaultValues, formLabels } from "./constants";
+import { OcorrenciasEventoSection } from "./form-sections/ocorrencias-evento.section";
 
 export function FormSiscoaf() {
   const form = useForm<IFormSiscoaf>({
@@ -16,8 +17,9 @@ export function FormSiscoaf() {
 
   return (
     <Form {...form}>
-      <form onSubmit={handleSubmit} className="flex flex-col grow gap-8">
+      <form onSubmit={handleSubmit} className="flex grow flex-col gap-8">
         <DescricaoEventoSection />
+        <OcorrenciasEventoSection />
 
         <Button type="submit" className="self-end">
           {formLabels.btnSubmit}
