@@ -1,5 +1,6 @@
 import { UF } from "@/@types/UF.type";
 import { dateToPtBrIsoString } from "@/lib/date-methods";
+import { removeAccents } from "@/lib/string-methods";
 import { z } from "zod";
 
 const envolvidoSchema = z.object({
@@ -12,7 +13,11 @@ const envolvidoSchema = z.object({
 });
 
 const ocorrenciaSchema = z.object({
-  NumOcorrencia: z.string(),
+  NumOcorrencia: z
+    .string()
+    .min(4)
+    .max(80)
+    .transform((arg) => removeAccents(arg).toUpperCase()),
   DtInicio: z
     .date()
     .nullable()
@@ -21,11 +26,17 @@ const ocorrenciaSchema = z.object({
     .date()
     .nullable()
     .transform((date) => (date === null ? date : dateToPtBrIsoString(date))),
-  AgMun: z.string(),
+  AgMun: z
+    .string()
+    .min(2)
+    .transform((arg) => removeAccents(arg.substring(0, 100)).toUpperCase()),
   AgUF: z.nativeEnum(UF).nullable(),
-  VlCred: z.string(),
-  CPFCNPJCom: z.string(),
-  Det: z.string(),
+  VlCred: z.string().refine((arg) => /^\d+([.,]\d+)*$/.test(arg)),
+  CPFCNPJCom: z.string().min(11).max(16),
+  Det: z
+    .string()
+    .max(200)
+    .transform((arg) => removeAccents(arg).toUpperCase()),
   ENQUADRAMENTOS: z.object({ CodEnq: z.number().array() }),
   ENVOLVIDOS: z.object({
     ENVOLVIDO: envolvidoSchema.array(),
