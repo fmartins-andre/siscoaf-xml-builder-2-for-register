@@ -17,6 +17,7 @@ import {
   PopoverTrigger,
 } from "@/components/ui/popover";
 import { useState } from "react";
+import { removeAccents, removeNonCharOrNum } from "@/lib/string-methods";
 
 export type FormComboboxProps = {
   value: string | null;
@@ -26,6 +27,26 @@ export type FormComboboxProps = {
 
 export function FormCombobox({ value, onChange, options }: FormComboboxProps) {
   const [open, setOpen] = useState<boolean>(false);
+
+  function filterOptions(value: string, search: string): number {
+    const _value = removeAccents(
+      removeNonCharOrNum(
+        JSON.stringify(
+          options.find(
+            (opt) => opt.label.includes(value) || opt.value.includes(value),
+          ),
+        ) || value,
+      ),
+    );
+    const term = removeAccents(removeNonCharOrNum(search));
+
+    const valueHasTerm = term
+      .split(" ")
+      .map((word) => _value.toUpperCase().includes(word.toUpperCase()))
+      .every(Boolean);
+
+    return valueHasTerm ? 1 : 0;
+  }
 
   return (
     <Popover open={open} onOpenChange={setOpen}>
@@ -45,7 +66,7 @@ export function FormCombobox({ value, onChange, options }: FormComboboxProps) {
         </Button>
       </PopoverTrigger>
       <PopoverContent className="w-full p-0">
-        <Command>
+        <Command filter={filterOptions}>
           <CommandInput placeholder="Digite para filtrar" />
           <CommandEmpty>Nenhum resultado encontrado</CommandEmpty>
           <CommandGroup>
