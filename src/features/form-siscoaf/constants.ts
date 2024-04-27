@@ -6,8 +6,8 @@ export const formDefaultValues: IFormSiscoaf = {
       "@ID": "",
       OCORRENCIA: {
         NumOcorrencia: "",
-        DtInicio: "",
-        DtFim: "",
+        DtInicio: null,
+        DtFim: null,
         AgMun: "",
         AgUF: "",
         VlCred: "",

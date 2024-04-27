@@ -1,3 +1,4 @@
+import { dateToPtBrIsoString } from "@/lib/date-methods";
 import { z } from "zod";
 
 const envolvidoSchema = z.object({
@@ -11,8 +12,14 @@ const envolvidoSchema = z.object({
 
 const ocorrenciaSchema = z.object({
   NumOcorrencia: z.string(),
-  DtInicio: z.date(),
-  DtFim: z.date(),
+  DtInicio: z
+    .date()
+    .nullable()
+    .transform((date) => (date === null ? date : dateToPtBrIsoString(date))),
+  DtFim: z
+    .date()
+    .nullable()
+    .transform((date) => (date === null ? date : dateToPtBrIsoString(date))),
   AgMun: z.string(),
   AgUF: z.string(),
   VlCred: z.string(),
@@ -24,13 +31,32 @@ const ocorrenciaSchema = z.object({
   }),
 });
 
-export const formSiscoafSchema = z.object({
-  LOTE: z.object({
-    OCORRENCIAS: z.object({
-      "@ID": z.string(),
-      OCORRENCIA: ocorrenciaSchema,
+export const formSiscoafSchema = z
+  .object({
+    LOTE: z.object({
+      OCORRENCIAS: z.object({
+        "@ID": z.string(),
+        OCORRENCIA: ocorrenciaSchema,
+      }),
     }),
-  }),
-});
+  })
+  .superRefine((args, ctx) => {
+    if (args.LOTE.OCORRENCIAS.OCORRENCIA.DtInicio == null) {
+      ctx.addIssue({
+        code: z.ZodIssueCode.invalid_date,
+        message: "Obrigatório",
+        path: ["LOTE.OCORRENCIAS.OCORRENCIA.DtInicio"],
+      });
+    }
 
-export type IFormSiscoaf = z.infer<typeof formSiscoafSchema>;
+    if (args.LOTE.OCORRENCIAS.OCORRENCIA.DtFim == null) {
+      ctx.addIssue({
+        code: z.ZodIssueCode.invalid_date,
+        message: "Obrigatório",
+        path: ["LOTE.OCORRENCIAS.OCORRENCIA.DtFim"],
+      });
+    }
+  });
+
+export type IFormSiscoaf = z.input<typeof formSiscoafSchema>;
+export type IFormSiscoafOutput = z.infer<typeof formSiscoafSchema>;

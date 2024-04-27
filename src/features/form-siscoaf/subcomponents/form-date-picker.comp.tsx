@@ -11,8 +11,8 @@ import { format } from "date-fns";
 import { SelectSingleEventHandler } from "react-day-picker";
 import React from "react";
 
-export type FormDatePickerProps = CalendarProps & {
-  value: Date;
+export type FormDatePickerProps = Partial<CalendarProps> & {
+  value: Date | null;
   onChange?: SelectSingleEventHandler;
 };
 
@@ -38,7 +38,7 @@ export const FormDatePicker = React.forwardRef<
         <Calendar
           {...rest}
           mode="single"
-          selected={value}
+          selected={value ?? undefined}
           onSelect={onChange}
           disabled={(date) =>
             date > new Date() || date < new Date("1900-01-01")
