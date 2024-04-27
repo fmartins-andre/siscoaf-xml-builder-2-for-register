@@ -1,0 +1,42 @@
+[
+  {
+    "id": 951,
+    "criteria": [
+      {
+        "refs": [
+          "Art. 20-I CNJ - Provimento 88/2019.",
+          "Art. 156-I - Provimento 149/2023."
+        ],
+        "descriptions": [
+          "a operação que aparente não resultar de atividades ou negócios usuais do cliente ou do seu ramo de negócio."
+        ]
+      },
+      {
+        "refs": ["Art. 155-A, inciso I."],
+        "descriptions": [
+          "aparentem não decorrer de atividades ou negócios usuais do cliente, de outros envolvidos ou do seu ramo de atuação;"
+        ]
+      }
+    ]
+  },
+  {
+    "id": 952,
+    "criteria": [
+      {
+        "refs": [
+          "Art. 20-II CNJ - Provimento 88/2019.",
+          "Art. 156-II - Provimento 149/2023."
+        ],
+        "descriptions": [
+          "a operação cuja origem ou fundamentação econômica ou legal não sejam claramente aferíveis."
+        ]
+      },
+      {
+        "refs": ["Art. 155-A, inciso II."],
+        "descriptions": [
+          "tenham origem ou fundamentação econômica ou legal não claramente aferíveis;"
+        ]
+      }
+    ]
+  }
+]
