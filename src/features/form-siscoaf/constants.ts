@@ -9,7 +9,7 @@ export const formDefaultValues: IFormSiscoaf = {
         DtInicio: null,
         DtFim: null,
         AgMun: "",
-        AgUF: "",
+        AgUF: null,
         VlCred: "",
         CPFCNPJCom: "",
         Det: "",

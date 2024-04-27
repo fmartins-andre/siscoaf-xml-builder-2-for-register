@@ -1,3 +1,4 @@
+import { UF } from "@/@types/UF.type";
 import { dateToPtBrIsoString } from "@/lib/date-methods";
 import { z } from "zod";
 
@@ -21,7 +22,7 @@ const ocorrenciaSchema = z.object({
     .nullable()
     .transform((date) => (date === null ? date : dateToPtBrIsoString(date))),
   AgMun: z.string(),
-  AgUF: z.string(),
+  AgUF: z.nativeEnum(UF).nullable(),
   VlCred: z.string(),
   CPFCNPJCom: z.string(),
   Det: z.string(),
@@ -54,6 +55,14 @@ export const formSiscoafSchema = z
         code: z.ZodIssueCode.invalid_date,
         message: "Obrigatório",
         path: ["LOTE.OCORRENCIAS.OCORRENCIA.DtFim"],
+      });
+    }
+
+    if (!args.LOTE.OCORRENCIAS.OCORRENCIA.AgUF) {
+      ctx.addIssue({
+        code: z.ZodIssueCode.custom,
+        message: "Obrigatório",
+        path: ["LOTE.OCORRENCIAS.OCORRENCIA.AgUF"],
       });
     }
   });

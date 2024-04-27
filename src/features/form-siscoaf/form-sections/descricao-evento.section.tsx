@@ -13,8 +13,31 @@ import { Textarea } from "@/components/ui/textarea";
 
 import { FormDatePicker } from "../subcomponents/form-date-picker.comp";
 
+import { FormCombobox } from "../subcomponents/form-combobox.comp";
+import { useQuery } from "@tanstack/react-query";
+import { getCitiesByState, getStates } from "@/api/address/address.client";
+import { useMemo } from "react";
+
 export function DescricaoEventoSection() {
   const form = useFormContext<IFormSiscoaf>();
+
+  const selectedState = form.watch("LOTE.OCORRENCIAS.OCORRENCIA.AgUF");
+
+  const { data: states } = useQuery(getStates().queryOptions);
+  const statesOptions = useMemo(
+    () =>
+      states?.map((state) => ({ label: state.nome, value: state.sigla })) ?? [],
+    [states],
+  );
+
+  const { data: cities } = useQuery(
+    getCitiesByState(selectedState).queryOptions,
+  );
+  const citiesOptions = useMemo(
+    () => cities?.map((city) => ({ label: city.nome, value: city.nome })) ?? [],
+    [cities],
+  );
+
   return (
     <section className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
       <div className="sm:-order-1">
@@ -63,12 +86,16 @@ export function DescricaoEventoSection() {
 
       <FormField
         control={form.control}
-        name="LOTE.OCORRENCIAS.OCORRENCIA.AgMun"
+        name="LOTE.OCORRENCIAS.OCORRENCIA.AgUF"
         render={({ field }) => (
           <FormItem>
-            <FormLabel>{formLabels.AgMun}</FormLabel>
+            <FormLabel>{formLabels.AgUF}</FormLabel>
             <FormControl>
-              <Input {...field} />
+              <FormCombobox
+                value={field.value}
+                onChange={(value) => field.onChange(value)}
+                options={statesOptions}
+              />
             </FormControl>
             <FormMessage />
           </FormItem>
@@ -77,12 +104,16 @@ export function DescricaoEventoSection() {
 
       <FormField
         control={form.control}
-        name="LOTE.OCORRENCIAS.OCORRENCIA.AgUF"
+        name="LOTE.OCORRENCIAS.OCORRENCIA.AgMun"
         render={({ field }) => (
           <FormItem>
-            <FormLabel>{formLabels.AgUF}</FormLabel>
+            <FormLabel>{formLabels.AgMun}</FormLabel>
             <FormControl>
-              <Input {...field} />
+              <FormCombobox
+                value={field.value}
+                onChange={(value) => field.onChange(value)}
+                options={citiesOptions}
+              />
             </FormControl>
             <FormMessage />
           </FormItem>
