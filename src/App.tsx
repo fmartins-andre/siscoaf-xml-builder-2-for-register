@@ -1,12 +1,15 @@
 import "@/globals.css";
 import { SimpleLayout } from "@/components/layouts/simple-layout";
 import { FormSiscoaf } from "@/features/form-siscoaf";
+import { QueryClientProvider } from "@/config/providers/query-client.provider";
 
 function App() {
   return (
-    <SimpleLayout>
-      <FormSiscoaf />
-    </SimpleLayout>
+    <QueryClientProvider>
+      <SimpleLayout>
+        <FormSiscoaf />
+      </SimpleLayout>
+    </QueryClientProvider>
   );
 }
 
