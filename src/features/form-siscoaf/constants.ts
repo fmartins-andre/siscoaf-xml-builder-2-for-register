@@ -1,4 +1,17 @@
-import { IFormSiscoaf } from "./form-siscoaf.schema";
+import {
+  RelatedPersonPublicServantType,
+  RelatedPersonRelationshipType,
+} from "@/api/related-people/related-people.schemas";
+import { IFormSiscoaf, IFormSiscoafRelatedPerson } from "./form-siscoaf.schema";
+
+export const formDefaultRelatedPersonValues: IFormSiscoafRelatedPerson = {
+  TpEnv: RelatedPersonRelationshipType.TITULAR,
+  PEP: false,
+  PObrigada: false,
+  ServPub: RelatedPersonPublicServantType.NAO,
+  NmEnv: "",
+  CPFCNPJEnv: "",
+};
 
 export const formDefaultValues: IFormSiscoaf = {
   LOTE: {
@@ -17,7 +30,7 @@ export const formDefaultValues: IFormSiscoaf = {
           CodEnq: [],
         },
         ENVOLVIDOS: {
-          ENVOLVIDO: [],
+          ENVOLVIDO: [formDefaultRelatedPersonValues],
         },
       },
     },
@@ -36,7 +49,7 @@ export const formLabels = {
   ENQUADRAMENTOS: "Ocorrências",
   ENVOLVIDOS: "Pessoa(s) envolvida(s)",
   ENVOLVIDO: {
-    TpEnv: "Tipo de relação envolvida",
+    TpEnv: "Tipo de relação",
     PEP: "Pessoa Politicamente Exposta",
     PObrigada: "Pessoa Obrigada",
     ServPub: "Servidor Público",

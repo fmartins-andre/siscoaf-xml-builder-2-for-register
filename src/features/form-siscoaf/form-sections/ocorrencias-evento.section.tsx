@@ -46,33 +46,34 @@ export function OcorrenciasEventoSection() {
   }, [criteria, filter]);
 
   return (
-    <section className="flex flex-col">
+    <section className="flex flex-col flex-wrap gap-4">
+      <div className="flex flex-wrap justify-between">
+        <span className="text-xl">Enquadramentos</span>
+        <div className="flex gap-1">
+          <Input
+            value={filter}
+            onChange={(e) => setFilter(e.target.value)}
+            placeholder="filtrar enquadramentos"
+            className="w-full max-w-96"
+          />
+
+          <Button
+            variant="outline"
+            size="icon"
+            disabled={!filter}
+            type="button"
+            onClick={() => setFilter("")}
+          >
+            <XIcon />
+          </Button>
+        </div>
+      </div>
+
       <FormField
         control={form.control}
         name="LOTE.OCORRENCIAS.OCORRENCIA.ENQUADRAMENTOS.CodEnq"
         render={() => (
           <FormItem>
-            <div className="mb-4 flex justify-between">
-              <FormLabel className="text-base">Enquadramentos</FormLabel>
-              <div className="flex gap-1">
-                <Input
-                  value={filter}
-                  onChange={(e) => setFilter(e.target.value)}
-                  placeholder="filtrar enquadramentos"
-                  className="w-96"
-                />
-
-                <Button
-                  variant="outline"
-                  size="icon"
-                  disabled={!filter}
-                  type="button"
-                  onClick={() => setFilter("")}
-                >
-                  <XIcon />
-                </Button>
-              </div>
-            </div>
             <div className="flex w-full flex-col gap-1">
               {filteredCriteria?.map((item) => (
                 <FormField
