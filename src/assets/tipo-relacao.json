@@ -1,0 +1,10 @@
+[
+  { "label": "Titular", "value": "1" },
+  { "label": "Procurador / Representante Legal", "value": "7" },
+  { "label": "Outros", "value": "8" },
+  { "label": "Comprador", "value": "20" },
+  { "label": "Vendedor", "value": "21" },
+  { "label": "Beneficiário Final", "value": "32" },
+  { "label": "Outorgado", "value": "36" },
+  { "label": "Outorgante", "value": "37" }
+]

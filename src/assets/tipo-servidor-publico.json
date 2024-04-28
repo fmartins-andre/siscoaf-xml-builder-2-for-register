@@ -1,0 +1,7 @@
+[
+  { "label": "Não", "value": "0" },
+  { "label": "Sim", "value": "1" },
+  { "label": "SPF", "value": "2" },
+  { "label": "SPE", "value": "3" },
+  { "label": "SPM", "value": "4" }
+]
