@@ -2,7 +2,7 @@ import { queryOptions as tanstackQueryOptions } from "@tanstack/react-query";
 
 import { AddressCity, AddressState } from "./address.schemas";
 import { addressEndpoints } from "./address.endpoints";
-import { UF } from "@/@types/UF.type";
+import { UF } from "@/api/address/address.schemas";
 
 export function getStates() {
   const queryKey = ["address-states"];

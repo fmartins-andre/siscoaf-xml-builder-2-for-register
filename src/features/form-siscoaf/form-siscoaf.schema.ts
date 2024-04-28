@@ -1,4 +1,4 @@
-import { UF } from "@/@types/UF.type";
+import { UF } from "@/api/address/address.schemas";
 import { dateToPtBrIsoString } from "@/lib/date-methods";
 import { removeAccents } from "@/lib/string-methods";
 import { z } from "zod";
