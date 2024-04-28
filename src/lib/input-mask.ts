@@ -69,9 +69,51 @@ const pixMask = (value: string) => {
   return cpfCnpjMask(value);
 };
 
+const currencyMask = (value: string, prefix: string = ""): string => {
+  if (prefix) {
+    prefix = prefix + " ";
+  }
+
+  if (!value) return prefix;
+
+  // Remove non-digit characters and limit to two decimal places
+  const cleanedValue = value.replace(/[^\d,]/g, "");
+
+  if (cleanedValue.startsWith(",")) {
+    return prefix;
+  }
+
+  let parts = cleanedValue.split(",");
+
+  // Ensure leading 0 is handled
+  if (parts[0].startsWith("0") && parts[0].length > 1) {
+    if (parts[0].startsWith("00")) {
+      parts[0] = "0";
+    } else {
+      parts[0] = parts[0][1];
+    }
+  }
+
+  // Truncate decimal part to at most two digits
+  if (parts[1] && parts[1].length > 2) {
+    parts[1] = parts[1].slice(0, 2);
+  }
+
+  // Ensure only one comma in the whole string
+  if (parts.length > 2) {
+    parts = [parts[0], parts.slice(1).join("")];
+  }
+
+  // Format as currency with two decimal places
+  parts[0] = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+
+  return `${prefix}${parts.join(",")}`;
+};
+
 export const inputMask = {
   phone: phoneMask,
   cpfCnpj: cpfCnpjMask,
   cep: cepMask,
   pix: pixMask,
+  currency: currencyMask,
 };

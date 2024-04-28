@@ -17,6 +17,7 @@ import { FormCombobox } from "../subcomponents/form-combobox.comp";
 import { useQuery } from "@tanstack/react-query";
 import { getCitiesByState, getStates } from "@/api/address/address.client";
 import { useMemo } from "react";
+import { inputMask } from "@/lib/input-mask";
 
 export function DescricaoEventoSection() {
   const form = useFormContext<IFormSiscoaf>();
@@ -128,7 +129,12 @@ export function DescricaoEventoSection() {
             <FormItem>
               <FormLabel>{formLabels.VlCred}</FormLabel>
               <FormControl>
-                <Input {...field} />
+                <Input
+                  {...field}
+                  onChange={(e) =>
+                    field.onChange(inputMask.currency(e.target.value, "R$"))
+                  }
+                />
               </FormControl>
               <FormMessage />
             </FormItem>
@@ -143,7 +149,12 @@ export function DescricaoEventoSection() {
           <FormItem>
             <FormLabel>{formLabels.CPFCNPJCom}</FormLabel>
             <FormControl>
-              <Input {...field} />
+              <Input
+                {...field}
+                onChange={(e) =>
+                  field.onChange(inputMask.cpfCnpj(e.target.value))
+                }
+              />
             </FormControl>
             <FormMessage />
           </FormItem>
