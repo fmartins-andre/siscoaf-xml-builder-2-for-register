@@ -3,20 +3,28 @@ import {
   RelatedPersonPublicServantType,
   RelatedPersonRelationshipType,
 } from "@/api/related-people/related-people.schemas";
-import { dateToPtBrIsoString } from "@/lib/date-methods";
+import { dateToPtBrString } from "@/lib/date-methods";
 import { removeAccents } from "@/lib/string-methods";
 import { z } from "zod";
 
 const REQUIRED_MESSAGE = "Obrigatório";
 
-const cpfCnpjSchema = z.string().min(11).max(18);
+const cpfCnpjSchema = z
+  .string()
+  .min(11)
+  .max(18)
+  .transform((arg) => arg.replace(/\D/g, ""));
 
 const envolvidoSchema = z.object({
   TpEnv: z.nativeEnum(RelatedPersonRelationshipType),
-  PEP: z.boolean(),
-  PObrigada: z.boolean(),
+  PEP: z.boolean().transform((arg) => (arg ? 1 : 0)),
+  PObrigada: z.boolean().transform((arg) => (arg ? 1 : 0)),
   ServPub: z.nativeEnum(RelatedPersonPublicServantType),
-  NmEnv: z.string().min(3).max(150),
+  NmEnv: z
+    .string()
+    .min(3)
+    .max(150)
+    .transform((arg) => removeAccents(arg).toUpperCase()),
   CPFCNPJEnv: cpfCnpjSchema,
 });
 
@@ -29,17 +37,20 @@ const ocorrenciaSchema = z.object({
   DtInicio: z
     .date()
     .nullable()
-    .transform((date) => (date === null ? date : dateToPtBrIsoString(date))),
+    .transform((date) => (date === null ? date : dateToPtBrString(date))),
   DtFim: z
     .date()
     .nullable()
-    .transform((date) => (date === null ? date : dateToPtBrIsoString(date))),
+    .transform((date) => (date === null ? date : dateToPtBrString(date))),
   AgMun: z
     .string()
     .min(2, REQUIRED_MESSAGE)
     .transform((arg) => removeAccents(arg.substring(0, 100)).toUpperCase()),
   AgUF: z.nativeEnum(UF).nullable(),
-  VlCred: z.string().refine((arg) => /^\d+([.,]\d+)*$/.test(arg)),
+  VlCred: z
+    .string()
+    .transform((arg) => arg.replace(/[^\d.,]/g, ""))
+    .refine((arg) => /^\d+([.,]\d+)*$/.test(arg)),
   CPFCNPJCom: cpfCnpjSchema,
   Det: z
     .string()

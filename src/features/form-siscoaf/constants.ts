@@ -3,6 +3,7 @@ import {
   RelatedPersonRelationshipType,
 } from "@/api/related-people/related-people.schemas";
 import { IFormSiscoaf, IFormSiscoafRelatedPerson } from "./form-siscoaf.schema";
+import { dateToPtBrString } from "@/lib/date-methods";
 
 export const formDefaultRelatedPersonValues: IFormSiscoafRelatedPerson = {
   TpEnv: RelatedPersonRelationshipType.TITULAR,
@@ -16,7 +17,7 @@ export const formDefaultRelatedPersonValues: IFormSiscoafRelatedPerson = {
 export const formDefaultValues: IFormSiscoaf = {
   LOTE: {
     OCORRENCIAS: {
-      "@ID": "",
+      "@ID": `SISCOAF${dateToPtBrString(new Date())?.replace(/\D/g, "")}`,
       OCORRENCIA: {
         NumOcorrencia: "",
         DtInicio: null,

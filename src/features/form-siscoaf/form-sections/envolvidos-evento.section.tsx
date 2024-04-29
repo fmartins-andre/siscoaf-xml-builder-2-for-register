@@ -49,11 +49,8 @@ export function EnvolvidosEventoSection() {
 
       <div className="flex flex-col gap-2">
         {fields.map((item, index) => (
-          <div className="flex gap-2">
-            <div
-              key={item.id}
-              className="grid grid-cols-1 gap-4 rounded-lg border bg-amber-50 p-4 sm:grid-cols-2 md:grid-cols-4  lg:grid-cols-5"
-            >
+          <div className="flex gap-2" key={item.id}>
+            <div className="grid grid-cols-1 gap-4 rounded-lg border bg-amber-50 p-4 sm:grid-cols-2 md:grid-cols-4  lg:grid-cols-5">
               <FormField
                 control={form.control}
                 name={`LOTE.OCORRENCIAS.OCORRENCIA.ENVOLVIDOS.ENVOLVIDO.${index}.TpEnv`}
@@ -70,8 +67,11 @@ export function EnvolvidosEventoSection() {
                         </SelectTrigger>
                       </FormControl>
                       <SelectContent>
-                        {typesOptions?.relationshipType.map((type) => (
-                          <SelectItem value={type.value}>
+                        {typesOptions?.relationshipType.map((type, index) => (
+                          <SelectItem
+                            value={type.value}
+                            key={`${index}-${type.value}`}
+                          >
                             {type.label}
                           </SelectItem>
                         ))}
@@ -98,8 +98,11 @@ export function EnvolvidosEventoSection() {
                         </SelectTrigger>
                       </FormControl>
                       <SelectContent>
-                        {typesOptions?.publicServantType.map((type) => (
-                          <SelectItem value={type.value}>
+                        {typesOptions?.publicServantType.map((type, index) => (
+                          <SelectItem
+                            value={type.value}
+                            key={`${index}-${type.value}`}
+                          >
                             {type.label}
                           </SelectItem>
                         ))}

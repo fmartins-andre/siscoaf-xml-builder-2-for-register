@@ -7,6 +7,7 @@ import { IFormSiscoaf, formSiscoafSchema } from "./form-siscoaf.schema";
 import { formDefaultValues, formLabels } from "./constants";
 import { OcorrenciasEventoSection } from "./form-sections/ocorrencias-evento.section";
 import { EnvolvidosEventoSection } from "./form-sections/envolvidos-evento.section";
+import { useHandleSubmit } from "./helpers/use-handle-submit.hook";
 
 export function FormSiscoaf() {
   const form = useForm<IFormSiscoaf>({
@@ -14,11 +15,11 @@ export function FormSiscoaf() {
     defaultValues: formDefaultValues,
   });
 
-  const handleSubmit = form.handleSubmit((data) => console.log(data));
+  const { onSubmitHandler } = useHandleSubmit(form.handleSubmit);
 
   return (
     <Form {...form}>
-      <form onSubmit={handleSubmit} className="flex grow flex-col gap-16">
+      <form onSubmit={onSubmitHandler} className="flex grow flex-col gap-16">
         <DescricaoEventoSection />
         <EnvolvidosEventoSection />
         <OcorrenciasEventoSection />
