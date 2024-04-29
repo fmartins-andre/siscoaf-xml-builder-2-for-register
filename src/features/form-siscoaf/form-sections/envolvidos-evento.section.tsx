@@ -22,7 +22,13 @@ import {
 import { useQuery } from "@tanstack/react-query";
 import { getTypes } from "@/api/related-people/related-people.client";
 import { inputMask } from "@/lib/input-mask";
-import { ArrowDownIcon, ArrowUpIcon, TrashIcon } from "lucide-react";
+import {
+  ArrowDownIcon,
+  ArrowUpIcon,
+  BanIcon,
+  CircleCheckBigIcon,
+  TrashIcon,
+} from "lucide-react";
 
 export function EnvolvidosEventoSection() {
   const form = useFormContext<IFormSiscoaf>();
@@ -44,13 +50,15 @@ export function EnvolvidosEventoSection() {
       <div className="flex flex-wrap justify-between">
         <span className="text-xl">Pessoas Envolvidas</span>
 
-        <Button onClick={handleAppendNew}>Adicionar pessoa</Button>
+        <Button onClick={handleAppendNew} className="print:hidden">
+          Adicionar pessoa
+        </Button>
       </div>
 
       <div className="flex flex-col gap-2">
         {fields.map((item, index) => (
           <div className="flex gap-2" key={item.id}>
-            <div className="grid grid-cols-1 gap-4 rounded-lg border bg-amber-50 p-4 sm:grid-cols-2 md:grid-cols-4  lg:grid-cols-5">
+            <div className="grid grid-cols-1 gap-4 rounded-lg border bg-amber-50 p-4 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-5 print:w-full print:border-transparent">
               <FormField
                 control={form.control}
                 name={`LOTE.OCORRENCIAS.OCORRENCIA.ENVOLVIDOS.ENVOLVIDO.${index}.TpEnv`}
@@ -152,13 +160,17 @@ export function EnvolvidosEventoSection() {
                     control={form.control}
                     name={`LOTE.OCORRENCIAS.OCORRENCIA.ENVOLVIDOS.ENVOLVIDO.${index}.PObrigada`}
                     render={({ field }) => (
-                      <FormItem className="flex flex-row items-center gap-4 space-y-0">
+                      <FormItem className="flex flex-row items-center gap-4 space-y-0 print:gap-2">
                         <FormControl>
                           <Switch
+                            className="print:hidden"
                             checked={field.value}
                             onCheckedChange={field.onChange}
                           />
                         </FormControl>
+                        <div className="hidden print:block">
+                          {field.value ? <CircleCheckBigIcon /> : <BanIcon />}
+                        </div>
                         <FormLabel>{formLabels.ENVOLVIDO.PObrigada}</FormLabel>
                         <FormMessage />
                       </FormItem>
@@ -169,13 +181,17 @@ export function EnvolvidosEventoSection() {
                     control={form.control}
                     name={`LOTE.OCORRENCIAS.OCORRENCIA.ENVOLVIDOS.ENVOLVIDO.${index}.PEP`}
                     render={({ field }) => (
-                      <FormItem className="flex flex-row items-center gap-4 space-y-0">
+                      <FormItem className="flex flex-row items-center gap-4 space-y-0 print:gap-2">
                         <FormControl>
                           <Switch
+                            className="print:hidden"
                             checked={field.value}
                             onCheckedChange={field.onChange}
                           />
                         </FormControl>
+                        <div className="hidden print:block">
+                          {field.value ? <CircleCheckBigIcon /> : <BanIcon />}
+                        </div>
                         <FormLabel>{formLabels.ENVOLVIDO.PEP}</FormLabel>
                         <FormMessage />
                       </FormItem>
@@ -185,7 +201,7 @@ export function EnvolvidosEventoSection() {
               </div>
             </div>
 
-            <div className="flex flex-col gap-2">
+            <div className="flex flex-col gap-2 print:hidden">
               <Button
                 className="h-8 w-8"
                 disabled={fields.length <= 1}

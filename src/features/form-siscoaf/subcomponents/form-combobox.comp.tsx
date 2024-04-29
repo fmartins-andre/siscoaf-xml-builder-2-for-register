@@ -57,12 +57,13 @@ export function FormCombobox({ value, onChange, options }: FormComboboxProps) {
           className={cn(
             "w-full justify-between font-normal",
             !value && "text-muted-foreground",
+            "print:m-0 print:h-fit print:border-transparent print:p-0",
           )}
         >
           {value
             ? options?.find((option) => option?.value === value)?.label
             : "Selecione"}
-          <ChevronsUpDown className="ml-2 h-4 w-4 shrink-0 opacity-50" />
+          <ChevronsUpDown className="ml-2 h-4 w-4 shrink-0 opacity-50 print:opacity-0" />
         </Button>
       </PopoverTrigger>
       <PopoverContent className="w-full p-0">

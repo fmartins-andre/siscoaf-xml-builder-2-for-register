@@ -49,7 +49,7 @@ export function OcorrenciasEventoSection() {
     <section className="flex flex-col flex-wrap gap-4">
       <div className="flex flex-wrap justify-between">
         <span className="text-xl">Enquadramentos</span>
-        <div className="flex gap-1">
+        <div className="flex gap-1 print:hidden">
           <Input
             value={filter}
             onChange={(e) => setFilter(e.target.value)}
@@ -87,13 +87,15 @@ export function OcorrenciasEventoSection() {
                         className={cn(
                           "w-full rounded-sm border border-neutral-200 p-2 hover:border-neutral-400",
                           "flex flex-row space-x-4 space-y-0",
-                          field.value?.includes(item.id) &&
-                            "border-neutral-400",
+                          field.value?.includes(item.id)
+                            ? "border-neutral-400 print:border-transparent print:hover:border-transparent"
+                            : "print:hidden",
                         )}
                       >
                         <div className="flex flex-col gap-2">
                           <FormControl>
                             <Checkbox
+                              className="print:hidden"
                               checked={field.value?.includes(item.id)}
                               onCheckedChange={(checked) => {
                                 return checked

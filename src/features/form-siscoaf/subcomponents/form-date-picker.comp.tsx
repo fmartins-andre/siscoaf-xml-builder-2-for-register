@@ -28,10 +28,11 @@ export const FormDatePicker = React.forwardRef<
           className={cn(
             "w-full pl-3 text-left font-normal",
             !value && "text-muted-foreground",
+            "print:m-0 print:h-fit print:border-transparent print:p-0",
           )}
         >
           {value ? format(value, "P") : <span>Selecione uma data</span>}
-          <CalendarIcon className="ml-auto h-4 w-4 opacity-50" />
+          <CalendarIcon className="ml-auto h-4 w-4 opacity-50 print:opacity-0" />
         </Button>
       </PopoverTrigger>
       <PopoverContent className="w-auto p-0" align="start">

@@ -39,6 +39,7 @@ export const formDefaultValues: IFormSiscoaf = {
 };
 
 export const formLabels = {
+  "@ID": "ID da ocorrência",
   NumOcorrencia: "Número origem",
   DtInicio: "Data inicial do fato",
   DtFim: "Data final do fato",

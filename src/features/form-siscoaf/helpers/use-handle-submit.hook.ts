@@ -10,8 +10,6 @@ export function useHandleSubmit(
   handleSubmit: UseFormHandleSubmit<IFormSiscoaf>,
 ) {
   const onValid: SubmitHandler<IFormSiscoaf> = (data) => {
-    console.log(data);
-
     const builder = new XMLBuilder({
       format: true,
       ignoreAttributes: false,
@@ -19,17 +17,16 @@ export function useHandleSubmit(
     });
 
     const xmlContent = builder.build(data);
+    console.info("xml:\n", xmlContent);
+
     const xmlFile = new Blob([xmlContent], { type: "text/plain" });
     const downloadUrl = window.URL.createObjectURL(xmlFile);
-
     const link = document.createElement("a");
     link.href = downloadUrl;
     link.setAttribute("download", `${data.LOTE.OCORRENCIAS["@ID"]}.xml`);
     document.body.appendChild(link);
     link.click();
     link.parentNode?.removeChild(link);
-
-    console.log("xmlContent: ", xmlContent);
   };
 
   const onInvalid: SubmitErrorHandler<IFormSiscoaf> = (error) => {

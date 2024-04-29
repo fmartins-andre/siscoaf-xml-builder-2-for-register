@@ -40,7 +40,23 @@ export function DescricaoEventoSection() {
   );
 
   return (
-    <section className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+    <section className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 print:gap-2">
+      <div className="order-first col-span-full hidden print:block">
+        <FormField
+          control={form.control}
+          name="LOTE.OCORRENCIAS.@ID"
+          render={({ field }) => (
+            <FormItem>
+              <FormLabel>{formLabels["@ID"]}</FormLabel>
+              <FormControl>
+                <Input {...field} disabled />
+              </FormControl>
+              <FormMessage />
+            </FormItem>
+          )}
+        />
+      </div>
+
       <div className="sm:-order-1">
         <FormField
           control={form.control}

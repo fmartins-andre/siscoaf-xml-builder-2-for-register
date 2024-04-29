@@ -19,12 +19,15 @@ export function FormSiscoaf() {
 
   return (
     <Form {...form}>
-      <form onSubmit={onSubmitHandler} className="flex grow flex-col gap-16">
+      <form
+        onSubmit={onSubmitHandler}
+        className="flex grow flex-col gap-16 print:gap-4"
+      >
         <DescricaoEventoSection />
         <EnvolvidosEventoSection />
         <OcorrenciasEventoSection />
 
-        <Button type="submit" className="self-end">
+        <Button type="submit" className="self-end print:hidden">
           {formLabels.btnSubmit}
         </Button>
       </form>

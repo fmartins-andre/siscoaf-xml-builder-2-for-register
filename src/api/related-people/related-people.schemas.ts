@@ -14,7 +14,7 @@ export enum RelatedPersonRelationshipType {
 export enum RelatedPersonPublicServantType {
   NAO = "0",
   SIM = "1",
-  SPF = " 2",
+  SPF = "2",
   SPE = "3",
   SPM = "4",
 }
