@@ -9,7 +9,7 @@ import { z } from "zod";
 
 const REQUIRED_MESSAGE = "Obrigatório";
 
-const cpfCnpjSchema = z.string().min(11).max(16);
+const cpfCnpjSchema = z.string().min(11).max(18);
 
 const envolvidoSchema = z.object({
   TpEnv: z.nativeEnum(RelatedPersonRelationshipType),
