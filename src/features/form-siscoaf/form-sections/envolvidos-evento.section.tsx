@@ -46,19 +46,24 @@ export function EnvolvidosEventoSection() {
   const { data: typesOptions } = useQuery(getTypes().queryOptions);
 
   return (
-    <section className="flex flex-col flex-wrap gap-x-8 gap-y-4">
+    <section className="flex flex-col flex-wrap gap-x-8 gap-y-4 print:gap-0">
       <div className="flex flex-wrap justify-between">
         <span className="text-xl">Pessoas Envolvidas</span>
 
-        <Button onClick={handleAppendNew} className="print:hidden">
+        <Button
+          onClick={handleAppendNew}
+          variant="outline"
+          className="print:hidden"
+          type="button"
+        >
           Adicionar pessoa
         </Button>
       </div>
 
       <div className="flex flex-col gap-2">
         {fields.map((item, index) => (
-          <div className="flex gap-2" key={item.id}>
-            <div className="grid grid-cols-1 gap-4 rounded-lg border bg-amber-50 p-4 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-5 print:w-full print:border-transparent">
+          <div className="flex gap-2 print:gap-0" key={item.id}>
+            <div className="grid grid-cols-1 gap-4 rounded-lg border bg-amber-50 p-4 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-5 print:w-full print:gap-1 print:border-transparent print:p-0 print:pl-2">
               <FormField
                 control={form.control}
                 name={`LOTE.OCORRENCIAS.OCORRENCIA.ENVOLVIDOS.ENVOLVIDO.${index}.TpEnv`}
@@ -155,7 +160,7 @@ export function EnvolvidosEventoSection() {
               />
 
               <div className="sm:col-span-2 md:col-span-3 lg:col-span-5">
-                <div className="flex h-full flex-wrap items-center justify-start gap-x-8 gap-y-4">
+                <div className="flex h-full flex-wrap items-center justify-start gap-x-8 gap-y-4 print:gap-x-4">
                   <FormField
                     control={form.control}
                     name={`LOTE.OCORRENCIAS.OCORRENCIA.ENVOLVIDOS.ENVOLVIDO.${index}.PObrigada`}

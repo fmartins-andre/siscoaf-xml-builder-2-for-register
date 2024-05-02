@@ -8,6 +8,9 @@ import { formDefaultValues, formLabels } from "./constants";
 import { OcorrenciasEventoSection } from "./form-sections/ocorrencias-evento.section";
 import { EnvolvidosEventoSection } from "./form-sections/envolvidos-evento.section";
 import { useHandleSubmit } from "./helpers/use-handle-submit.hook";
+import { SimpleLayout } from "@/components/layouts/simple-layout";
+
+const formId = "siscoaf-form";
 
 export function FormSiscoaf() {
   const form = useForm<IFormSiscoaf>({
@@ -19,18 +22,25 @@ export function FormSiscoaf() {
 
   return (
     <Form {...form}>
-      <form
-        onSubmit={onSubmitHandler}
-        className="flex grow flex-col gap-16 print:gap-4"
-      >
-        <DescricaoEventoSection />
-        <EnvolvidosEventoSection />
-        <OcorrenciasEventoSection />
+      <SimpleLayout.Root>
+        <SimpleLayout.Header className="justify-between">
+          <Button form={formId} type="submit" className="self-end print:hidden">
+            {formLabels.btnSubmit}
+          </Button>
+        </SimpleLayout.Header>
 
-        <Button type="submit" className="self-end print:hidden">
-          {formLabels.btnSubmit}
-        </Button>
-      </form>
+        <SimpleLayout.Main>
+          <form
+            id={formId}
+            className="flex grow flex-col gap-16 print:gap-4"
+            onSubmit={onSubmitHandler}
+          >
+            <DescricaoEventoSection />
+            <EnvolvidosEventoSection />
+            <OcorrenciasEventoSection />
+          </form>
+        </SimpleLayout.Main>
+      </SimpleLayout.Root>
     </Form>
   );
 }
