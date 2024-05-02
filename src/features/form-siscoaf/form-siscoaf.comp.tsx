@@ -29,7 +29,7 @@ export function FormSiscoaf() {
         <SimpleLayout.Header className="justify-between">
           <Input
             type="file"
-            className="w-fit"
+            className="sm:w-fit"
             accept="text/xml"
             onChange={loadXmlHandler}
           />

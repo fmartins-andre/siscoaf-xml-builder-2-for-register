@@ -20,7 +20,7 @@ export function Header({
       </div>
       <nav
         className={cn(
-          "background-color:snow flex w-full max-w-[1024px] grow flex-wrap bg-[#fffafa] p-4 print:hidden",
+          "background-color:snow flex w-full max-w-[1024px] grow flex-col flex-wrap gap-2 bg-[#fffafa] p-4 sm:flex-row print:hidden",
           className,
         )}
         {...rest}
