@@ -15,28 +15,18 @@ import { FormDatePicker } from "../subcomponents/form-date-picker.comp";
 
 import { FormCombobox } from "../subcomponents/form-combobox.comp";
 import { useQuery } from "@tanstack/react-query";
-import { getCitiesByState, getStates } from "@/api/address/address.client";
+import { getStates } from "@/api/address/address.client";
 import { useMemo } from "react";
 import { inputMask } from "@/lib/input-mask";
 
 export function DescricaoEventoSection() {
   const form = useFormContext<IFormSiscoaf>();
 
-  const selectedState = form.watch("LOTE.OCORRENCIAS.OCORRENCIA.AgUF");
-
   const { data: states } = useQuery(getStates().queryOptions);
   const statesOptions = useMemo(
     () =>
       states?.map((state) => ({ label: state.nome, value: state.sigla })) ?? [],
     [states],
-  );
-
-  const { data: cities } = useQuery(
-    getCitiesByState(selectedState).queryOptions,
-  );
-  const citiesOptions = useMemo(
-    () => cities?.map((city) => ({ label: city.nome, value: city.nome })) ?? [],
-    [cities],
   );
 
   return (
@@ -126,11 +116,7 @@ export function DescricaoEventoSection() {
           <FormItem>
             <FormLabel>{formLabels.AgMun}</FormLabel>
             <FormControl>
-              <FormCombobox
-                value={field.value}
-                onChange={(value) => field.onChange(value)}
-                options={citiesOptions}
-              />
+              <Input {...field} />
             </FormControl>
             <FormMessage />
           </FormItem>
