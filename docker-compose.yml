@@ -1,0 +1,14 @@
+version: "3.1"
+
+services:
+  node:
+    build: .
+    container_name: siscoafxmlbuilder2forregister
+    restart: always
+    environment:
+      TZ: "America/Sao_Paulo"
+    env_file:
+      - ./.env
+    command: npm run start:prod
+    ports:
+      - "8096:3000"

@@ -7,6 +7,8 @@ export default defineConfig(({ mode }) => {
   const env = loadEnv(mode, process.cwd());
   process.env = { ...process.env, ...env }; // required to express as it uses process.env
 
+  const serverOptions = getServerOptions();
+
   return {
     plugins: [react()],
     resolve: {
@@ -14,5 +16,15 @@ export default defineConfig(({ mode }) => {
         "@": path.resolve(__dirname, "./src"),
       },
     },
+    server: serverOptions,
+    preview: serverOptions,
   };
 });
+
+function getServerOptions() {
+  return {
+    host: "0.0.0.0",
+    strictPort: true,
+    port: 3000,
+  };
+}
