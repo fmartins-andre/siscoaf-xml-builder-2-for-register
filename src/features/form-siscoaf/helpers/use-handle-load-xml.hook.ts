@@ -3,6 +3,7 @@ import { ChangeEventHandler } from "react";
 import { UseFormReset, UseFormReturn } from "react-hook-form";
 import { IFormSiscoaf, formSiscoafSchema } from "../form-siscoaf.schema";
 import { xmlParserOptions } from "./xml-parser-options";
+import { toast } from "sonner";
 
 type UseHandleLoadXml = {
   form: UseFormReturn<IFormSiscoaf>;
@@ -37,7 +38,12 @@ const onLoadFile =
 
       console.info("data:\n", data);
       reset(data);
+
+      toast.success("XML importado com sucesso!");
     } catch (error) {
       console.error("Erro do conteúdo do XML", error);
+      toast.error("Erro ao ler o XML", {
+        description: "Não foi possível recuperar as informações do arquivo.",
+      });
     }
   };

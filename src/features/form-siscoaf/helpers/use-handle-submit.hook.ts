@@ -6,6 +6,7 @@ import {
 import { IFormSiscoaf } from "../form-siscoaf.schema";
 import { XMLBuilder } from "fast-xml-parser";
 import { formDefaultValues } from "../constants";
+import { toast } from "sonner";
 
 type UseHandleSubmit = {
   form: UseFormReturn<IFormSiscoaf>;
@@ -32,10 +33,12 @@ export function useHandleSubmit({ form }: UseHandleSubmit) {
     link.parentNode?.removeChild(link);
 
     form.reset(formDefaultValues);
+    toast.success("XML gerado com sucesso!");
   };
 
   const onInvalid: SubmitErrorHandler<IFormSiscoaf> = (error) => {
     console.error(error);
+    toast.error("Oops... Corrija os problemas do formulário");
   };
 
   const onSubmitHandler = form.handleSubmit(onValid, onInvalid);

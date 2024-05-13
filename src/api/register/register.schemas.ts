@@ -57,8 +57,10 @@ export const registerDataSchema = z
     // AgUF: z.nativeEnum(UF).nullish(),
     VlCred: z.coerce
       .string()
-      .default("0")
+      .nullable()
       .transform((arg) => {
+        if (!arg) return null;
+
         const sanitizedValue = parseFloat(arg).toFixed(2).replace(".", ",");
         const formattedValue = inputMask.currency(sanitizedValue, "R$");
 
@@ -69,7 +71,10 @@ export const registerDataSchema = z
     }),
   })
   .superRefine((args, ctx) => {
-    const hasNoData = Object.values(args).every((value) => !value);
+    const { ENVOLVIDOS, ...rest } = args;
+
+    const hasNoData =
+      Object.values(rest).every((value) => !value) && !ENVOLVIDOS.ENVOLVIDO;
 
     if (hasNoData) {
       ctx.addIssue({
