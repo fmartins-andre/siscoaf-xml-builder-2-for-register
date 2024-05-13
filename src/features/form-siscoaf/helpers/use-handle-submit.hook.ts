@@ -1,14 +1,17 @@
 import {
   SubmitErrorHandler,
   SubmitHandler,
-  UseFormHandleSubmit,
+  UseFormReturn,
 } from "react-hook-form";
 import { IFormSiscoaf } from "../form-siscoaf.schema";
 import { XMLBuilder } from "fast-xml-parser";
+import { formDefaultValues } from "../constants";
 
-export function useHandleSubmit(
-  handleSubmit: UseFormHandleSubmit<IFormSiscoaf>,
-) {
+type UseHandleSubmit = {
+  form: UseFormReturn<IFormSiscoaf>;
+};
+
+export function useHandleSubmit({ form }: UseHandleSubmit) {
   const onValid: SubmitHandler<IFormSiscoaf> = (data) => {
     const builder = new XMLBuilder({
       format: true,
@@ -27,13 +30,15 @@ export function useHandleSubmit(
     document.body.appendChild(link);
     link.click();
     link.parentNode?.removeChild(link);
+
+    form.reset(formDefaultValues);
   };
 
   const onInvalid: SubmitErrorHandler<IFormSiscoaf> = (error) => {
     console.error(error);
   };
 
-  const onSubmitHandler = handleSubmit(onValid, onInvalid);
+  const onSubmitHandler = form.handleSubmit(onValid, onInvalid);
 
   return { onSubmitHandler };
 }

@@ -59,5 +59,6 @@ export const formLabels = {
     CPFCNPJEnv: "CPF / CNPJ",
   },
   btnSubmit: "Gerar XML",
+  btnReset: "Limpar Formulário",
   btnUploadXml: "Carregar XML",
 };

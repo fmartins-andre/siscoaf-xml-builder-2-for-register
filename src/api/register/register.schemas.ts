@@ -4,7 +4,7 @@ import {
   RelatedPersonRelationshipType,
 } from "@/api/related-people/related-people.schemas";
 import { inputMask } from "@/lib/input-mask";
-import { isoStringToDate, removeAccents } from "@/lib/string-methods";
+import { removeAccents } from "@/lib/string-methods";
 import { z } from "zod";
 
 const envolvidoSchema = z.object({
@@ -46,14 +46,8 @@ const envolvidoSchema = z.object({
 
 export const registerDataSchema = z
   .object({
-    DtInicio: z
-      .string()
-      .nullable()
-      .transform((dateStr) => (dateStr ? isoStringToDate(dateStr) : null)),
-    DtFim: z
-      .string()
-      .nullable()
-      .transform((dateStr) => (dateStr ? isoStringToDate(dateStr) : null)),
+    DtInicio: z.string().nullable(),
+    DtFim: z.string().nullable(),
     // AgMun: z
     //   .string()
     //   .nullish()

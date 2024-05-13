@@ -20,8 +20,10 @@ export function FormSiscoaf() {
     defaultValues: formDefaultValues,
   });
 
-  const { onSubmitHandler } = useHandleSubmit(form.handleSubmit);
-  const { loadXmlHandler } = useHandleLoadXml(form.reset);
+  const { onSubmitHandler } = useHandleSubmit({ form });
+  const { loadXmlHandler } = useHandleLoadXml({ form });
+
+  const resetData = () => form.reset(formDefaultValues);
 
   return (
     <Form {...form}>
@@ -34,9 +36,15 @@ export function FormSiscoaf() {
             onChange={loadXmlHandler}
           />
 
-          <Button form={formId} type="submit">
-            {formLabels.btnSubmit}
-          </Button>
+          <div className="flex flex-col gap-2 sm:w-fit sm:flex-row">
+            <Button variant="secondary" type="button" onClick={resetData}>
+              {formLabels.btnReset}
+            </Button>
+
+            <Button form={formId} type="submit">
+              {formLabels.btnSubmit}
+            </Button>
+          </div>
         </SimpleLayout.Header>
 
         <SimpleLayout.Main>

@@ -3,6 +3,7 @@ import { FocusEventHandler, useCallback } from "react";
 import { UseFormReturn } from "react-hook-form";
 import { IFormSiscoaf } from "../form-siscoaf.schema";
 import { formDefaultValues } from "../constants";
+import { isoStringToDate } from "@/lib/string-methods";
 
 type UseHandleRegisterOnBlur = {
   form: UseFormReturn<IFormSiscoaf>;
@@ -22,9 +23,12 @@ export function useHandleRegisterOnBlur({ form }: UseHandleRegisterOnBlur) {
 
       form.setValue(
         "LOTE.OCORRENCIAS.OCORRENCIA.DtInicio",
-        protocolData.DtInicio,
+        protocolData.DtInicio ? isoStringToDate(protocolData.DtInicio) : null,
       );
-      form.setValue("LOTE.OCORRENCIAS.OCORRENCIA.DtFim", protocolData.DtFim);
+      form.setValue(
+        "LOTE.OCORRENCIAS.OCORRENCIA.DtFim",
+        protocolData.DtFim ? isoStringToDate(protocolData.DtFim) : null,
+      );
       form.setValue("LOTE.OCORRENCIAS.OCORRENCIA.VlCred", protocolData.VlCred);
       form.setValue(
         "LOTE.OCORRENCIAS.OCORRENCIA.ENVOLVIDOS.ENVOLVIDO",

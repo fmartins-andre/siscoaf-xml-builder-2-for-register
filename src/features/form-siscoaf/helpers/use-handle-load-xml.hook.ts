@@ -1,15 +1,19 @@
 import { XMLParser } from "fast-xml-parser";
 import { ChangeEventHandler } from "react";
-import { UseFormReset } from "react-hook-form";
+import { UseFormReset, UseFormReturn } from "react-hook-form";
 import { IFormSiscoaf, formSiscoafSchema } from "../form-siscoaf.schema";
 import { xmlParserOptions } from "./xml-parser-options";
 
-export function useHandleLoadXml(reset: UseFormReset<IFormSiscoaf>) {
+type UseHandleLoadXml = {
+  form: UseFormReturn<IFormSiscoaf>;
+};
+
+export function useHandleLoadXml({ form }: UseHandleLoadXml) {
   const loadXmlHandler: ChangeEventHandler<HTMLInputElement> = (e) => {
     e.preventDefault();
 
     const reader = new FileReader();
-    reader.onload = onLoadFile(reset);
+    reader.onload = onLoadFile(form.reset);
 
     const file = e?.target?.files?.[0];
     if (!file) return;
