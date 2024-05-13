@@ -1,4 +1,4 @@
-import { UF } from "@/api/address/address.schemas";
+// import { UF } from "@/api/address/address.schemas";
 import {
   RelatedPersonPublicServantType,
   RelatedPersonRelationshipType,
@@ -48,35 +48,31 @@ export const registerDataSchema = z
   .object({
     DtInicio: z
       .string()
-      .nullish()
-      .transform((dateStr) => (dateStr ? isoStringToDate(dateStr) : undefined)),
+      .nullable()
+      .transform((dateStr) => (dateStr ? isoStringToDate(dateStr) : null)),
     DtFim: z
       .string()
-      .nullish()
-      .transform((dateStr) => (dateStr ? isoStringToDate(dateStr) : undefined)),
-    AgMun: z
-      .string()
-      .nullish()
-      .transform((arg) =>
-        arg ? removeAccents(arg.substring(0, 100)).toUpperCase() : undefined,
-      ),
-    AgUF: z.nativeEnum(UF).nullish(),
+      .nullable()
+      .transform((dateStr) => (dateStr ? isoStringToDate(dateStr) : null)),
+    // AgMun: z
+    //   .string()
+    //   .nullish()
+    //   .transform((arg) =>
+    //     arg ? removeAccents(arg.substring(0, 100)).toUpperCase() : undefined,
+    //   ),
+    // AgUF: z.nativeEnum(UF).nullish(),
     VlCred: z.coerce
       .string()
-      .nullish()
+      .default("0")
       .transform((arg) => {
-        if (!arg) return undefined;
-
         const sanitizedValue = parseFloat(arg).toFixed(2).replace(".", ",");
         const formattedValue = inputMask.currency(sanitizedValue, "R$");
 
         return formattedValue;
       }),
-    ENVOLVIDOS: z
-      .object({
-        ENVOLVIDO: envolvidoSchema.array().default([]),
-      })
-      .nullish(),
+    ENVOLVIDOS: z.object({
+      ENVOLVIDO: envolvidoSchema.array().nullable(),
+    }),
   })
   .superRefine((args, ctx) => {
     const hasNoData = Object.values(args).every((value) => !value);

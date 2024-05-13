@@ -31,8 +31,8 @@ export async function dbDataHandler(occurrenceNumber: string) {
 
   await connection.end();
 
-  const VlCred = occurrenceRows?.[0]?.VlCred ?? undefined;
-  const eventDate = occurrenceRows?.[0]?.eventDate ?? undefined;
+  const VlCred = occurrenceRows?.[0]?.VlCred ?? null;
+  const eventDate = occurrenceRows?.[0]?.eventDate ?? null;
 
   const people = peopleRows.map((person) => ({
     ...person,
@@ -43,13 +43,7 @@ export async function dbDataHandler(occurrenceNumber: string) {
     VlCred,
     DtInicio: eventDate,
     DtFim: eventDate,
-    ...(people.length
-      ? {
-          ENVOLVIDOS: {
-            ENVOLVIDO: people,
-          },
-        }
-      : {}),
+    ENVOLVIDOS: { ENVOLVIDO: people.length ? people : null },
   });
 
   if (!result.success) {
