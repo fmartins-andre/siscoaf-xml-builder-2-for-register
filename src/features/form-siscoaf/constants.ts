@@ -4,6 +4,13 @@ import {
 } from "@/api/related-people/related-people.schemas";
 import { IFormSiscoaf, IFormSiscoafRelatedPerson } from "./form-siscoaf.schema";
 import { dateToPtBrString } from "@/lib/date-methods";
+import { UF } from "@/api/address/address.schemas";
+import { inputMask } from "@/lib/input-mask";
+import { removeAccents } from "@/lib/string-methods";
+
+const AGMUN = import.meta.env.VITE_APP_DEFAULT_CITY || "";
+const AGUF = (import.meta.env.VITE_APP_DEFAULT_STATE as UF) || null;
+const CPFCNPJCOM = import.meta.env.VITE_APP_DEFAULT_NOTIFIERID || "";
 
 export const formDefaultRelatedPersonValues: IFormSiscoafRelatedPerson = {
   TpEnv: RelatedPersonRelationshipType.TITULAR,
@@ -22,10 +29,10 @@ export const formDefaultValues: IFormSiscoaf = {
         NumOcorrencia: "",
         DtInicio: null,
         DtFim: null,
-        AgMun: "",
-        AgUF: null,
+        AgMun: removeAccents(AGMUN.substring(0, 100)).toUpperCase(),
+        AgUF: AGUF,
         VlCred: "",
-        CPFCNPJCom: "",
+        CPFCNPJCom: inputMask.cpfCnpj(CPFCNPJCOM),
         Det: "",
         ENQUADRAMENTOS: {
           CodEnq: [],
