@@ -18,6 +18,7 @@ import { useQuery } from "@tanstack/react-query";
 import { getStates } from "@/api/address/address.client";
 import { useMemo } from "react";
 import { inputMask } from "@/lib/input-mask";
+import { useHandleRegisterOnBlur } from "../helpers/use-handle-register-on-blur";
 
 export function DescricaoEventoSection() {
   const form = useFormContext<IFormSiscoaf>();
@@ -28,6 +29,8 @@ export function DescricaoEventoSection() {
       states?.map((state) => ({ label: state.nome, value: state.sigla })) ?? [],
     [states],
   );
+
+  const getProtocolOnBlur = useHandleRegisterOnBlur({ form });
 
   return (
     <section className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 print:gap-2">
@@ -55,7 +58,7 @@ export function DescricaoEventoSection() {
             <FormItem>
               <FormLabel>{formLabels.NumOcorrencia}</FormLabel>
               <FormControl>
-                <Input {...field} />
+                <Input {...field} onBlur={getProtocolOnBlur} />
               </FormControl>
               <FormMessage />
             </FormItem>
