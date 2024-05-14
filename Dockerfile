@@ -1,4 +1,4 @@
-FROM node:lts-iron
+FROM node:iron-alpine
 
 WORKDIR /app
 
