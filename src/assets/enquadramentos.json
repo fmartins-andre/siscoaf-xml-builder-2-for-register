@@ -1,753 +1,443 @@
 [
   {
-    "id": 951,
+    "id": 1356,
+    "group": "Enquadramento Geral",
     "criteria": [
       {
-        "refs": [
-          "Art. 20-I CNJ - Provimento 88/2019.",
-          "Art. 156-I - Provimento 149/2023."
-        ],
-        "descriptions": [
-          "a operação que aparente não resultar de atividades ou negócios usuais do cliente ou do seu ramo de negócio."
-        ]
+        "refs": ["Negócio incomum para o usuário."],
+        "descriptions": []
       },
       {
-        "refs": ["Art. 155-A, inciso I"],
+        "refs": ["Art. 155-A, I, Provimento 149/2023 CNJ"],
         "descriptions": [
-          "aparentem não decorrer de atividades ou negócios usuais do cliente, de outros envolvidos ou do seu ramo de atuação;"
+          "Aparentem não decorrer de atividades ou negócios usuais do cliente, de outros envolvidos ou do seu ramo de atuação;"
         ]
       }
     ]
   },
   {
-    "id": 952,
+    "id": 1357,
+    "group": "Enquadramento Geral",
     "criteria": [
       {
-        "refs": [
-          "Art. 20-II CNJ - Provimento 88/2019.",
-          "Art. 156-II - Provimento 149/2023."
-        ],
-        "descriptions": [
-          "a operação cuja origem ou fundamentação econômica ou legal não sejam claramente aferíveis."
-        ]
+        "refs": ["Negócio com origem econômica obscura, sem fundamento."],
+        "descriptions": []
       },
       {
-        "refs": ["Art. 155-A, inciso II"],
+        "refs": ["Art. 155-A, II, Provimento 149/2023 CNJ"],
         "descriptions": [
-          "tenham origem ou fundamentação econômica ou legal não claramente aferíveis;"
+          "Tenham origem ou fundamentação econômica ou legal não claramente aferíveis;"
         ]
       }
     ]
   },
   {
-    "id": 953,
+    "id": 1358,
+    "group": "Enquadramento Geral",
     "criteria": [
       {
-        "refs": [
-          "Art. 20-III CNJ - Provimento 88/2019.",
-          "Art. 156-III - Provimento 149/2023."
-        ],
-        "descriptions": [
-          "a operação incompatível com o patrimônio ou com a capacidade econômico-financeira do cliente."
-        ]
+        "refs": ["Incapacidade financeira, incompatibilidade."],
+        "descriptions": []
       },
       {
-        "refs": ["Art. 155-A, inciso III"],
+        "refs": ["Art. 155-A, III, Provimento 149/2023 CNJ"],
         "descriptions": [
-          "se mostrem incompatíveis com o patrimônio ou com a capacidade econômico-financeira do cliente ou de outros envolvidos;"
+          "Se mostrem incompatíveis com o patrimônio ou com a capacidade econômico-financeira do cliente ou de outros envolvidos;"
         ]
       }
     ]
   },
   {
-    "id": 954,
+    "id": 1359,
+    "group": "Enquadramento Geral",
     "criteria": [
       {
-        "refs": [
-          "Art. 20-IV CNJ - Provimento 88/2019.",
-          "Art. 156-IV - Provimento 149/2023."
-        ],
-        "descriptions": [
-          "a operação cujo beneficiário final não seja possível identificar."
-        ]
+        "refs": ["Uso de \"laranja\" para empresas."],
+        "descriptions": []
       },
       {
-        "refs": ["Art. 155-A, inciso IV"],
+        "refs": ["Art. 155-A, IV, Provimento 149/2023 CNJ"],
         "descriptions": [
-          "envolvam difícil ou inviável identificação de beneficiário(s) final(is);"
+          "Envolvam difícil ou inviável identificação de beneficiário(s) final(is);"
         ]
       }
     ]
   },
   {
-    "id": 955,
+    "id": 1360,
+    "group": "Enquadramento Geral",
     "criteria": [
       {
-        "refs": [
-          "Art. 20-V CNJ - Provimento 88/2019.",
-          "Art. 156-V - Provimento 149/2023."
-        ],
-        "descriptions": [
-          "as operações envolvendo pessoas jurídicas domiciliadas em jurisdições consideradas pelo Grupo de Ação contra a Lavagem de Dinheiro e o Financiamento do Terrorismo (Gafi) de alto risco ou com deficiências estratégicas de prevenção e combate à lavagem de dinheiro e ao financiamento do terrorismo."
-        ]
+        "refs": ["PJ com sede em local de alto risco."],
+        "descriptions": []
       },
       {
-        "refs": ["Art. 155-A, inciso V"],
+        "refs": ["Art. 155-A, V, Provimento 149/2023 CNJ"],
         "descriptions": [
-          "se relacionem a pessoa jurídica domiciliada em jurisdição listada pelo Grupo de Ação Financeira (Gafi) como de alto risco ou com deficiências estratégicas em matéria de PLD/FTP;"
+          "Se relacionem a pessoa jurídica domiciliada em jurisdição listada pelo Grupo de Ação Financeira (Gafi) como de alto risco ou com deficiências estratégicas em matéria de PLD/FTP;"
         ]
       }
     ]
   },
   {
-    "id": 956,
+    "id": 1361,
+    "group": "Enquadramento Geral",
     "criteria": [
       {
-        "refs": [
-          "Art. 20-VI CNJ - Provimento 88/2019.",
-          "Art. 156-IV - Provimento 149/2023."
-        ],
-        "descriptions": [
-          "operações envolvendo países ou dependências considerados pela RFB de tributação favorecida e/ou regime fiscal privilegiado, conforme lista pública."
-        ]
+        "refs": ["Participação de Paraísos Fiscais."],
+        "descriptions": []
       },
       {
-        "refs": ["Art. 155-A, inciso VI"],
+        "refs": ["Art. 155-A, VI, Provimento 149/2023 CNJ"],
         "descriptions": [
-          "envolvam países ou dependências listados pela RFB como de tributação favorecida e/ou regime fiscal privilegiado;"
+          "Envolvam países ou dependências listados pela RFB como de tributação favorecida e/ou regime fiscal privilegiado;"
         ]
       }
     ]
   },
   {
-    "id": 957,
+    "id": 1362,
+    "group": "Enquadramento Geral",
     "criteria": [
       {
-        "refs": [
-          "Art. 20-VII CNJ - Provimento 88/2019.",
-          "Art. 156-VII - Provimento 149/2023."
-        ],
-        "descriptions": [
-          "a operação envolvendo pessoa jurídica cujo beneficiário final, sócios, acionistas, procuradores ou representantes legais mantenham domicílio em jurisdições consideradas pelo Gafi de alto risco ou com deficiências estratégicas de prevenção e combate à lavagem de dinheiro e ao financiamento do terrorismo."
-        ]
+        "refs": ["Sócios/administradores com endereço em local de alto risco."],
+        "descriptions": []
       },
       {
-        "refs": ["Art. 155-A, inciso VII"],
+        "refs": ["Art. 155-A, VII, Provimento 149/2023 CNJ"],
         "descriptions": [
-          "se relacionem a pessoa jurídica cujos sócios, administradores, beneficiários finais, procuradores ou representantes legais mantenham domicílio em jurisdições consideradas pelo Gafi de alto risco ou com deficiências estratégicas em matéria de PLD/FTP;"
+          "Se relacionem a pessoa jurídica cujos sócios, administradores, beneficiários finais, procuradores ou representantes legais mantenham domicílio em jurisdições consideradas pelo Gafi de alto risco ou com deficiências estratégicas em matéria de PLD/FTP;"
         ]
       }
     ]
   },
   {
-    "id": 958,
+    "id": 1363,
+    "group": "Enquadramento Geral",
     "criteria": [
       {
-        "refs": [
-          "Art. 20-VIII CNJ - Provimento 88/2019.",
-          "Art. 156-VIII - Provimento 149/2023."
-        ],
-        "descriptions": [
-          "a resistência, por parte do cliente e/ou dos demais envolvidos, no fornecimento de informações solicitadas para o registro da operação, bem como para o preenchimento dos cadastros."
-        ]
+        "refs": ["Resistência na prestação de informação."],
+        "descriptions": []
       },
       {
-        "refs": ["Art. 155-A, inciso VIII"],
+        "refs": ["Art. 155-A, VIII, Provimento 149/2023 CNJ"],
         "descriptions": [
-          "apresentem, por parte de cliente ou demais envolvidos, resistência ao fornecimento de informação ou documentação solicitada para fins relacionados ao disposto neste Capítulo;"
+          "Apresentem, por parte de cliente ou demais envolvidos, resistência ao fornecimento de informação ou documentação solicitada para fins relacionados ao disposto neste Capítulo;"
         ]
       }
     ]
   },
   {
-    "id": 959,
+    "id": 1364,
+    "group": "Enquadramento Geral",
     "criteria": [
       {
-        "refs": [
-          "Art. 20-IX CNJ - Provimento 88/2019.",
-          "Art. 156-IX - Provimento 149/2023."
-        ],
-        "descriptions": [
-          "a prestação, por parte do cliente e/ou dos demais envolvidos, de informação falsa ou de difícil ou onerosa verificação para o registro da operação, bem como para o preenchimento dos cadastros."
-        ]
+        "refs": ["Documento falso ou difícil verificação."],
+        "descriptions": []
       },
       {
-        "refs": ["Art. 155-A, inciso IX"],
+        "refs": ["Art. 155-A, IX, Provimento 149/2023 CNJ"],
         "descriptions": [
-          "envolvam a prestação, por parte de cliente ou demais envolvidos, de informação ou documentação falsa ou de difícil ou onerosa verificação;"
+          "Envolvam a prestação, por parte de cliente ou demais envolvidos, de informação ou documentação falsa ou de difícil ou onerosa verificação;"
         ]
       }
     ]
   },
   {
-    "id": 960,
+    "id": 1365,
+    "group": "Enquadramento Geral",
     "criteria": [
       {
-        "refs": [
-          "Art. 20-X CNJ - Provimento 88/2019.",
-          "Art. 156-X - Provimento 149/2023."
-        ],
-        "descriptions": [
-          "a operação injustificadamente complexa ou com custos mais elevados, que visem dificultar o rastreamento dos recursos ou a identificação do seu real objetivo."
-        ]
+        "refs": ["Negócio muito complexo para ato simples."],
+        "descriptions": []
       },
       {
-        "refs": ["Art. 155-A, inciso X"],
+        "refs": ["Art. 155-A, X, Provimento 149/2023 CNJ"],
         "descriptions": [
-          "se mostrem injustificadamente mais complexas ou onerosas que de ordinário, mormente se isso puder dificultar o rastreamento de recursos ou a identificação de real propósito;"
+          "Se mostrem injustificadamente mais complexas ou onerosas que de ordinário, mormente se isso puder dificultar o rastreamento de recursos ou a identificação de real propósito;"
         ]
       }
     ]
   },
   {
-    "id": 961,
+    "id": 1366,
+    "group": "Enquadramento Geral",
     "criteria": [
       {
-        "refs": [
-          "Art. 20-XI CNJ - Provimento 88/2019.",
-          "Art. 156-XI - Provimento 149/2023."
-        ],
-        "descriptions": [
-          "a operação fictícia ou com indícios de valores incompatíveis com os de mercado."
-        ]
+        "refs": ["Negócio simulado."],
+        "descriptions": []
       },
       {
-        "refs": ["Art. 155-A, inciso XI"],
+        "refs": ["Art. 155-A, XI, Provimento 149/2023 CNJ"],
         "descriptions": [
-          "apresentem sinais de caráter fictício ou de relação com valores incompatíveis com os de mercado;"
+          "Apresentem sinais de caráter fictício ou de relação com valores incompatíveis com os de mercado;"
         ]
       }
     ]
   },
   {
-    "id": 962,
+    "id": 1367,
+    "group": "Enquadramento Geral",
     "criteria": [
       {
-        "refs": [
-          "Art. 20-XII CNJ - Provimento 88/2019.",
-          "Art. 156-XII - Provimento 149/2023."
-        ],
-        "descriptions": [
-          "a operação com cláusulas que estabeleçam condições incompatíveis com as praticadas no mercado."
-        ]
+        "refs": ["Condições incompatíveis e fora do comum."],
+        "descriptions": []
       },
       {
-        "refs": ["Art. 155-A, inciso XII"],
+        "refs": ["Art. 155-A, XII, Provimento 149/2023 CNJ"],
         "descriptions": [
-          "envolvam cláusulas que estabeleçam condições incompatíveis com as praticadas no mercado;"
+          "Envolvam cláusulas que estabeleçam condições incompatíveis com as praticadas no mercado;"
         ]
       }
     ]
   },
   {
-    "id": 963,
+    "id": 1368,
+    "group": "Enquadramento Geral",
     "criteria": [
       {
-        "refs": [
-          "Art. 20-XIII CNJ - Provimento 88/2019.",
-          "Art. 156-XIII - Provimento 149/2023."
-        ],
-        "descriptions": [
-          "qualquer tentativa de burlar os controles e registros exigidos pela legislação de prevenção à lavagem de dinheiro e ao financiamento do terrorismo, através de fracionamento, pagamento em espécie ou por meio de título emitido ao portador."
-        ]
+        "refs": ["Tentativa de burlar o SISCOAF."],
+        "descriptions": []
       },
       {
-        "refs": ["Art. 155-A, inciso XIII"],
+        "refs": ["Art. 155-A, XIII, Provimento 149/2023 CNJ"],
         "descriptions": [
-          "aparentem tentativa de burlar controles e registros exigidos pela legislação de PLD/FTP, inclusive mediante fracionamento ou pagamento em espécie, com título emitido ao portador ou por outros meios que dificultem a rastreabilidade;"
+          "Aparentem tentativa de burlar controles e registros exigidos pela legislação de PLD/FTP, inclusive mediante fracionamento ou pagamento em espécie, com título emitido ao portador ou por outros meios que dificultem a rastreabilidade;"
         ]
       }
     ]
   },
   {
-    "id": 964,
+    "id": 1369,
+    "group": "Enquadramento Geral",
     "criteria": [
       {
-        "refs": [
-          "Art. 20-XIV CNJ - Provimento 88/2019.",
-          "Art. 156-XIV - Provimento 149/2023."
-        ],
-        "descriptions": [
-          "o registro de documentos de procedência estrangeira, nos termos do art. 129, 6º, c/c o art. 48 da Lei n. 6.015, de 31 de dezembro de 1973."
-        ]
+        "refs": ["Documento estrangeiro, confuso e estranho."],
+        "descriptions": []
       },
       {
-        "refs": ["Art. 155-A, inciso XIV"],
+        "refs": ["Art. 155-A, XIV, Provimento 149/2023 CNJ"],
         "descriptions": [
-          "envolvam o registro de documento de procedência estrangeira, nos termos do art. 129, 6º, combinado com o art. 148 da Lei n. 6.015, de 31 de dezembro de 1973, que ofereçam dificuldade significativa para a compreensão do seu sentido jurídico no contexto da atividade notarial ou registral de que se trate;"
+          "Envolvam o registro de documento de procedência estrangeira, nos termos do art. 129, 6º, combinado com o art. 148 da Lei n. 6.015, de 31 de dezembro de 1973, que ofereçam dificuldade significativa para a compreensão do seu sentido jurídico no contexto da atividade notarial ou registral de que se trate;"
         ]
       }
     ]
   },
   {
-    "id": 965,
+    "id": 1370,
+    "group": "Enquadramento Geral",
     "criteria": [
       {
-        "refs": [
-          "Art. 20-XV CNJ - Provimento 88/2019.",
-          "Art. 156-XV - Provimento 149/2023."
-        ],
-        "descriptions": [
-          "a operação que indique substancial ganho de capital em um curto período de tempo."
-        ]
+        "refs": ["Aumento excessivo de patrimônio."],
+        "descriptions": []
       },
       {
-        "refs": ["Art. 155-A, inciso XV"],
+        "refs": ["Art. 155-A, XV, Provimento 149/2023 CNJ"],
         "descriptions": [
-          "revelem substancial ganho de capital em curto período;"
+          "Revelem substancial ganho de capital em curto período;"
         ]
       }
     ]
   },
   {
-    "id": 966,
+    "id": 1371,
+    "group": "Enquadramento Geral",
     "criteria": [
       {
-        "refs": [
-          "Art. 20-XVI CNJ - Provimento 88/2019.",
-          "Art. 156-XVI - Provimento 149/2023."
-        ],
-        "descriptions": [
-          "a operação que envolva a expedição ou utilização de instrumento de procuração que outorgue poderes de administração, de gerência dos negócios, ou de movimentação de conta corrente vinculada de empresário individual, sociedade empresária ou cooperativa."
-        ]
+        "refs": ["Gestão Empresarial sem prestação de contas."],
+        "descriptions": []
       },
       {
-        "refs": ["Art. 155-A, inciso XVI"],
+        "refs": ["Art. 155-A, XVI, Provimento 149/2023 CNJ"],
         "descriptions": [
-          "envolvam lavratura ou utilização de instrumento de procuração que outorgue amplos poderes de administraçãode pessoa jurídica ou de gestão empresarial, de gerência de negócios ou de movimentação de conta bancária, de pagamento ou de natureza semelhante, especialmente quando conferidos em caráter irrevogável ou irretratável ou isento de prestação de contas, independentemente de se tratar, ou não, de procuração em causa própria ou por prazo indeterminado;"
+          "Envolvam lavratura ou utilização de instrumento de procuração que outorgue amplos poderes de administração de pessoa jurídica ou de gestão empresarial, de gerência de negócios ou de movimentação de conta bancária, de pagamento ou de natureza semelhante, especialmente quando conferidos em caráter irrevogável ou irretratável ou isento de prestação de contas, independentemente de se tratar, ou não, de procuração em causa própria ou por prazo indeterminado;"
         ]
       }
     ]
   },
   {
-    "id": 967,
+    "id": 1372,
+    "group": "Enquadramento Geral",
     "criteria": [
       {
         "refs": [
-          "Art. 20-XVII CNJ - Provimento 88/2019.",
-          "Art. 156-XVII - Provimento 149/2023."
+          "Aumento excessivo do Capital Social e destoante da condição da empresa."
         ],
-        "descriptions": [
-          "as operações de aumento de capital social quando pelas partes envolvidas no ato, ou as características do empreendimento, verificar-se indícios de que o referido aumento não possui correspondência com o valor ou o patrimônio da empresa."
-        ]
+        "descriptions": []
       },
       {
-        "refs": ["Art. 155-A, inciso XVII"],
+        "refs": ["Art. 155-A, XVII, Provimento 149/2023 CNJ"],
         "descriptions": [
-          "revelem operações de aumento de capital social que pareçam destoar dos efetivos atributos de valor, patrimônio ou outros aspectos relacionados às condições econômico-financeiras da sociedade, diante de circunstâncias como, por exemplo, partes envolvidas no ato ou características do empreendimento;"
+          "Revelem operações de aumento de capital social que pareçam destoar dos efetivos atributos de valor, patrimônio ou outros aspectos relacionados às condições econômico-financeiras da sociedade, diante de circunstâncias como, por exemplo, partes envolvidas no ato ou características do empreendimento; e "
         ]
       }
     ]
   },
   {
-    "id": 968,
+    "id": 1373,
+    "group": "Enquadramento Geral",
     "criteria": [
       {
         "refs": [
-          "Art. 20-XVIII CNJ - Provimento 88/2019.",
-          "Art. 156-XVIII - Provimento 149/2023."
+          "Qualquer outro caso suspeito de comunicação. Negócio estranho."
         ],
-        "descriptions": [
-          "quaisquer outras operações que, considerando as partes e demais envolvidos, os valores, modo de realização e meio e forma de pagamento, ou a falta de fundamento econômico ou legal, possam configurar sérios indícios da ocorrência dos crimes de lavagem de dinheiro ou de financiamento do terrorismo, ou com eles relacionar-se."
-        ]
+        "descriptions": []
       },
       {
-        "refs": ["Art. 155-A, inciso XVIII"],
+        "refs": ["Art. 155-A, XVIII, Provimento 149/2023 CNJ"],
         "descriptions": [
-          "quaisquer outras operações, propostas de operação ou situações que, considerando suas características, especialmente partes, demais envolvidos, valores, modo de realização, meios e formas de pagamento, falta de fundamento econômico ou legal ou, ainda, incompatibilidade com práticas de mercado, possam configurar sérios indícios de práticas de LD/FTP ou de infrações que com elas se relacionem."
+          "Quaisquer outras operações, propostas de operação ou situações que, considerando suas características, especialmente partes, demais envolvidos, valores, modo de realização, meios e formas de pagamento, falta de fundamento econômico ou legal ou, ainda, incompatibilidade com práticas de mercado, possam configurar sérios indícios de práticas de LD/FTP ou de infrações que com elas se relacionem. "
         ]
       }
     ]
   },
   {
-    "id": 969,
+    "id": 1374,
+    "group": "Enquadramento Geral",
     "criteria": [
       {
         "refs": [
-          "Art. 20-XIX CNJ - Provimento 88/2019.",
-          "Art. 156-XIX - Provimento 149/2023."
+          "Meio ou Forma de Pagamento incomum ou de terceiros estranhos."
         ],
-        "descriptions": [
-          "outras situações designadas em instruções complementares a este provimento."
-        ]
+        "descriptions": []
       },
       {
-        "refs": ["Art. 155-A, parágrafo único, inciso I"],
+        "refs": [
+          "Art. 155-A [...] Parágrafo único, I, Provimento 149/2023 CNJ"
+        ],
         "descriptions": [
-          "revelem emprego não usual de meio ou forma de pagamento que possa viabilizar anonimato ou dificultar a rastreabilidade de movimentação de valores ou a identificação de quem a tenha realizado, como o uso de valores anormalmente elevados em espécie ou na forma de título emitido ao portador ou, ainda, de ativo virtual não vinculado nominalmente a quem o movimente;"
+          "Revelem emprego não usual de meio ou forma de pagamento que possa viabilizar anonimato ou dificultar a rastreabilidade de movimentação de valores ou a identificação de quem a tenha realizado, como o uso de valores anormalmente elevados em espécie ou na forma de título emitido ao portador ou, ainda, de ativo virtual não vinculado nominalmente a quem o movimente; e "
         ]
+      }
+    ]
+  },
+  {
+    "id": 1375,
+    "group": "Enquadramento Geral",
+    "criteria": [
+      {
+        "refs": ["Qualquer sinal com práticas de terrorismo."],
+        "descriptions": []
       },
       {
-        "refs": ["Art. 155-A, parágrafo único, inciso II"],
+        "refs": [
+          "Art. 155-A [...] Parágrafo único, II, Provimento 149/2023 CNJ"
+        ],
         "descriptions": [
-          "apresentem algum sinal de possível relação, direta ou indireta, com práticas de terrorismo ou proliferação de armas de destruição em massa ou com seus financiamentos, inclusive em hipóteses correlatas eventualmente contempladas em atos normativos da UIF."
+          "Apresentem algum sinal de possível relação, direta ou indireta, com práticas de terrorismo ou proliferação de armas de destruição em massa ou com seus financiamentos, inclusive em hipóteses correlatas eventualmente contempladas em atos normativos da UIF. "
         ]
       }
     ]
   },
+
   {
-    "id": 970,
+    "id": 1379,
+    "group": "Enquadramento Específico",
     "criteria": [
       {
-        "refs": [
-          "Art. 23-I CNJ - Provimento 88/2019.",
-          "Art. 159-I - Provimento 149/2023."
-        ],
-        "descriptions": [
-          "qualquer operação que envolva o pagamento ou recebimento de valor em espécie, igual ou superior a R$ 30.000,00 (trinta mil reais) ou equivalente em outra moeda, desde que perante o tabelião. Cart. Protesto"
-        ]
-      }
-    ]
-  },
-  {
-    "id": 971,
-    "criteria": [
-      {
-        "refs": [
-          "Art. 23-II CNJ - Provimento 88/2019.",
-          "Art. 159-II - Provimento 149/2023."
-        ],
-        "descriptions": [
-          "qualquer operação que envolva o pagamento ou recebimento de valor, por meio de título de crédito emitido ao portador, igual ou superior a R$ 30.000,00 (trinta mil reais), desde que perante o tabelião. Cart. Protesto"
-        ]
-      }
-    ]
-  },
-  {
-    "id": 972,
-    "criteria": [
-      {
-        "refs": [
-          "Art. 24 CNJ - Provimento 88/2019.",
-          "Art. 160 - Provimento 149/2023."
-        ],
-        "descriptions": [
-          "pagamentos ou cancelamentos de títulos protestados em valor igual ou superior a R$ 1.000.000,00 (um milhão de reais), não relacionados ao mercado financeiro, mercado de capitais ou entes públicos. Cart. Protesto"
-        ]
-      }
-    ]
-  },
-  {
-    "id": 973,
-    "criteria": [
-      {
-        "refs": [
-          "Art. 25-I CNJ - Provimento 88/2019.",
-          "Art. 161-I - Provimento 149/2023."
-        ],
-        "descriptions": [
-          "registro de transmissões sucessivas do mesmo bem, em período não superior a 6 (seis) meses, se a diferença entre os valores declarados for superior a 50%."
-        ]
+        "refs": ["Pagamento em espécie."],
+        "descriptions": []
       },
       {
-        "refs": ["Art. 162, inciso V"],
+        "refs": ["Art. 161, Provimento 149/2023 CNJ"],
         "descriptions": [
-          "registro de transmissões sucessivas do mesmo bem em período e com diferença de valor anormais; e"
+          "O oficial de registro de imóveis, ou seu oficial de cumprimento, comunicará à UIF, na forma do art. 151, II, registro de documento ou título em que conste declaração das partes de que foi realizado pagamento em espécie, ou por título ao portador, de valor igual ou superior a R$ 100.000,00 (cem mil reais) ou ao equivalente em outra moeda."
         ]
       }
     ]
   },
   {
-    "id": 974,
+    "id": 1380,
+    "group": "Enquadramento Específico",
     "criteria": [
       {
-        "refs": [
-          "Art. 25-II CNJ - Provimento 88/2019.",
-          "Art. 161-II - Provimento 149/2023."
-        ],
-        "descriptions": [
-          "registro de título no qual constem diferenças entre o valor da avaliação fiscal do bem e o valor declarado, ou entre o valor patrimonial e o valor declarado (superior ou inferior), superiores a 100%."
-        ]
+        "refs": ["Doação a estranho sem motivo."],
+        "descriptions": []
       },
       {
-        "refs": ["Art. 162, inciso VI"],
+        "refs": ["Art. 162, I, Provimento 149/2023 CNJ"],
         "descriptions": [
-          "registro de título no qual conste valor declarado de bem com diferença anormal em relação a outros valores a ele associados, como o de sua avaliação fiscal ou o valor patrimonial pelo qual tenha sido considerado para fins sucessórios ou de integralização de capital de sociedade, por exemplo."
+          "Doações de bens imóveis ou direitos reais sobre bens imóveis para terceiros sem vínculo familiar aparente com o doador, referente a bem imóvel que tenha valor venal atribuído pelo município igual ou superior a R$ 100.000,00 (cem mil reais);"
         ]
       }
     ]
   },
   {
-    "id": 975,
+    "id": 1381,
+    "group": "Enquadramento Específico",
     "criteria": [
       {
-        "refs": [
-          "Art. 25-III CNJ - Provimento 88/2019.",
-          "Art. 161-III - Provimento 149/2023."
-        ],
-        "descriptions": [
-          "registro de documento ou título em que conste declaração das partes de que foi realizado pagamento em espécie ou título de crédito ao portador de valores igual ou superior a R$ 30.000,00 (trinta mil reais)."
-        ]
+        "refs": ["Financiamento entre particulares."],
+        "descriptions": []
       },
       {
-        "refs": ["Art. 161"],
+        "refs": ["Art. 162, II, Provimento 149/2023 CNJ"],
         "descriptions": [
-          "registro de documento ou título em que conste declaração das partes de que foi realizado pagamento em espécie, ou por título ao portador, de valor igual ou superior a R$ 100.000,00 (cem mil reais) ou ao equivalente em outra moeda."
+          "Concessão de empréstimos hipotecários ou com alienação fiduciária entre particulares; "
         ]
       }
     ]
   },
   {
-    "id": 976,
+    "id": 1382,
+    "group": "Enquadramento Específico",
     "criteria": [
       {
-        "refs": [
-          "Art. 26-I CNJ - Provimento 88/2019.",
-          "Art. 162-I - Provimento 149/2023."
-        ],
-        "descriptions": [
-          "doações de bens imóveis ou direitos reais sobre bens imóveis para terceiros sem vínculo familiar aparente com o doador, referente a bem imóvel que tenha valor venal atribuído pelo município igual ou superior a R$100.000,00 (cem mil reais)."
-        ]
+        "refs": ["Sociedade \"zumbi\"."],
+        "descriptions": []
       },
       {
-        "refs": ["Art. 162, inciso I"],
+        "refs": ["Art. 162, III, Provimento 149/2023 CNJ"],
         "descriptions": [
-          "doações de bens imóveis ou direitos reais sobre bens imóveis para terceiros sem vínculo familiar aparente com o doador, referente a bem imóvel que tenha valor venal atribuído pelo município igual ou superior a R$ 100.000,00 (cem mil reais);"
+          "Registro de negócios celebrados por sociedades que tenham sido dissolvidas e tenham regressado à atividade; "
         ]
       }
     ]
   },
   {
-    "id": 977,
+    "id": 1383,
+    "group": "Enquadramento Específico",
     "criteria": [
       {
-        "refs": [
-          "Art. 26-II CNJ - Provimento 88/2019.",
-          "Art. 162-II - Provimento 149/2023."
-        ],
-        "descriptions": [
-          "concessão de empréstimos hipotecários ou com alienação fiduciária entre particulares."
-        ]
+        "refs": ["Negócio fora das finalidades da Sociedade."],
+        "descriptions": []
       },
       {
-        "refs": ["Art. 162, inciso II"],
+        "refs": ["Art. 162, IV, Provimento 149/2023 CNJ"],
         "descriptions": [
-          "concessão de empréstimos hipotecários ou com alienação fiduciária entre particulares;"
+          "Registro de aquisição de imóveis por fundações e associações, quando as características do negócio não se coadunem com suas finalidades; "
         ]
       }
     ]
   },
   {
-    "id": 978,
+    "id": 1384,
+    "group": "Enquadramento Específico",
     "criteria": [
       {
-        "refs": [
-          "Art. 26-III CNJ - Provimento 88/2019.",
-          "Art. 162-III - Provimento 149/2023."
-        ],
-        "descriptions": [
-          "registro de negócios celebrados por sociedades que tenham sido dissolvidas e tenham regressado à atividade."
-        ]
+        "refs": ["Transmissão sucessiva com diferença de valor."],
+        "descriptions": []
       },
       {
-        "refs": ["Art. 162, inciso III"],
+        "refs": ["Art. 162, V, Provimento 149/2023 CNJ"],
         "descriptions": [
-          "registro de negócios celebrados por sociedades que tenham sido dissolvidas e tenham regressado à atividade;"
+          "Vegistro de transmissões sucessivas do mesmo bem em período e com diferença de valor anormais; e "
         ]
       }
     ]
   },
   {
-    "id": 979,
+    "id": 1385,
+    "group": "Enquadramento Específico",
     "criteria": [
       {
-        "refs": [
-          "Art. 26-IV CNJ - Provimento 88/2019.",
-          "Art. 162-IV - Provimento 149/2023."
-        ],
-        "descriptions": [
-          "registro de aquisição de imóveis por fundações e associações, quando as características do negócio não se coadunem com as finalidades prosseguidas por aquelas pessoas jurídicas."
-        ]
+        "refs": ["Diferença entre o valor declarado e a avaliação."],
+        "descriptions": []
       },
       {
-        "refs": ["Art. 162, inciso IV"],
+        "refs": ["Art. 162, VI, Provimento 149/2023 CNJ"],
         "descriptions": [
-          "registro de aquisição de imóveis por fundações e associações, quando as características do negócio não se coadunem com suas finalidades;"
-        ]
-      }
-    ]
-  },
-  {
-    "id": 980,
-    "criteria": [
-      {
-        "refs": [
-          "Art. 27 CNJ - Provimento 88/2019.",
-          "Art. 163 - Provimento 149/2023."
-        ],
-        "descriptions": [
-          "operações que envolvam o pagamento ou recebimento de valor igual ou superior a R$ 50.000,00 (cinquenta mil reais) ou equivalente em outra moeda, inclusive quando se relacionar à compra ou venda de bens móveis e imóveis. RTD"
-        ]
-      }
-    ]
-  },
-  {
-    "id": 981,
-    "criteria": [
-      {
-        "refs": [
-          "Art. 28-I CNJ - Provimento 88/2019.",
-          "Art. 164-I - Provimento 149/2023."
-        ],
-        "descriptions": [
-          "registro de quaisquer documentos que se refiram a transferências de bens imóveis de qualquer valor, de transferências de cotas ou participações societárias, de transferências de bens móveis de valor superior a R$ 30.000,00. RTD"
-        ]
-      }
-    ]
-  },
-  {
-    "id": 982,
-    "criteria": [
-      {
-        "refs": [
-          "Art. 28-II CNJ - Provimento 88/2019.",
-          "Art. 164-II - Provimento 149/2023."
-        ],
-        "descriptions": [
-          "registro de quaisquer documentos que se refiram a mútuos concedidos ou contraídos ou doações concedidas ou recebidas, de valor superior ao equivalente a R$ 30.000,00. RTD"
-        ]
-      }
-    ]
-  },
-  {
-    "id": 983,
-    "criteria": [
-      {
-        "refs": [
-          "Art. 28-III CNJ - Provimento 88/2019.",
-          "Art. 164-III - Provimento 149/2023."
-        ],
-        "descriptions": [
-          "registro de quaisquer documentos que se refiram, ainda que indiretamente, a participações, investimentos ou representações de pessoas naturais ou jurídicas brasileiras em entidades estrangeiras, especialmente “trusts” ou fundações. RTD"
-        ]
-      }
-    ]
-  },
-  {
-    "id": 984,
-    "criteria": [
-      {
-        "refs": [
-          "Art. 28-IV CNJ - Provimento 88/2019.",
-          "Art. 164-IV - Provimento 149/2023."
-        ],
-        "descriptions": [
-          "registro de instrumentos que prevejam a cessão de direito de títulos de créditos ou de títulos públicos de valor igual ou superior a R$ 500.000,00 (quinhentos mil reais). RTD"
-        ]
-      }
-    ]
-  },
-  {
-    "id": 985,
-    "criteria": [
-      {
-        "refs": [
-          "Art. 35 CNJ - Provimento 88/2019.",
-          "Art. 171 - Provimento 149/2023."
-        ],
-        "descriptions": [
-          "lavratura de procuração que outorgue plenos poderes de gestão empresarial, conferida em caráter irrevogável ou irretratável ou quando isenta de prestação de contas, independentemente de ser em causa própria, ou ainda, de ser ou não por prazo indeterminado. Tabelionato"
-        ]
-      }
-    ]
-  },
-  {
-    "id": 986,
-    "criteria": [
-      {
-        "refs": [
-          "Art. 36-I CNJ - Provimento 88/2019.",
-          "Art. 172-I - Provimento 149/2023."
-        ],
-        "descriptions": [
-          "qualquer operação que envolva o pagamento ou recebimento de valor em espécie igual ou superior a R$ 30.000,00 (trinta mil reais) ou equivalente em outra moeda, em espécie, inclusive a compra ou venda de bens móveis ou imóveis. Tabelionato"
-        ]
-      }
-    ]
-  },
-  {
-    "id": 987,
-    "criteria": [
-      {
-        "refs": [
-          "Art. 36-II CNJ - Provimento 88/2019.",
-          "Art. 172-II - Provimento 149/2023."
-        ],
-        "descriptions": [
-          "qualquer operação que envolva o pagamento ou recebimento de valor igual ou superior a R$ 30.000,00 (trinta mil reais), por meio de título de crédito emitido ao portador, inclusive a compra ou venda de bens móveis ou imóveis. Tabelionato"
-        ]
-      }
-    ]
-  },
-  {
-    "id": 988,
-    "criteria": [
-      {
-        "refs": [
-          "Art. 36-III CNJ - Provimento 88/2019.",
-          "Art. 172-III - Provimento 149/2023."
-        ],
-        "descriptions": [
-          "qualquer das hipóteses previstas em resolução da Unidade de Inteligência Financeira - UIF que disponha sobre procedimentos a serem observados pelas pessoas físicas e jurídicas por ela reguladas relativamente a operações ou propostas de operações ligadas ao terrorismo ou seu financiamento. Tabelionato"
-        ]
-      }
-    ]
-  },
-  {
-    "id": 989,
-    "criteria": [
-      {
-        "refs": [
-          "Art. 36-IV CNJ - Provimento 88/2019.",
-          "Art. 172-IV - Provimento 149/2023."
-        ],
-        "descriptions": [
-          "qualquer operação ou conjunto de operações relativas a bens móveis de luxo ou alto valor, assim considerados os de valor igual ou superior a R$ 300.000,00 (trezentos mil reais), ou equivalente em outra moeda. Tabelionato"
-        ]
-      }
-    ]
-  },
-  {
-    "id": 990,
-    "criteria": [
-      {
-        "refs": [
-          "Art. 36-V CNJ - Provimento 88/2019.",
-          "Art. 25-I. Provimento 149/2023",
-          "Art. 172-V- art. 161 I."
-        ],
-        "descriptions": [
-          "escritura pública - registro de transmissões sucessivas do mesmo bem, em período não superior a 6 (seis) meses, se a diferença entre os valores declarados for superior a 50%. Tabelionato"
-        ]
-      }
-    ]
-  },
-  {
-    "id": 991,
-    "criteria": [
-      {
-        "refs": [
-          "Art. 36-V CNJ - Provimento 88/2019.",
-          "Art. 25-II. Provimento 149/2023",
-          "Art. 172-V- art. 161 II."
-        ],
-        "descriptions": [
-          "escritura pública - registro de título no qual constem diferenças entre o valor da avaliação fiscal do bem e o valor declarado, ou entre o valor patrimonial e o valor declarado (superior ou inferior), superiores a 100%;. Tabelionato"
-        ]
-      }
-    ]
-  },
-  {
-    "id": 992,
-    "criteria": [
-      {
-        "refs": [
-          "Art. 36-V CNJ - Provimento 88/2019.",
-          "Art. 25-III. Provimento 149/2023",
-          "Art. 172-V- art. 161 III."
-        ],
-        "descriptions": [
-          "escritura pública - registro de documento ou título em que conste declaração das partes de que foi realizado pagamento em espécie ou título de crédito ao portador de valores igual ou superior a R$ 30.000,00 (trinta mil reais). Tabelionato"
+          "Registro de título no qual conste valor declarado de bem com diferença anormal em relação a outros valores a ele associados, como o de sua avaliação fiscal ou o valor patrimonial pelo qual tenha sido considerado para fins sucessórios ou de integralização de capital de sociedade, por exemplo. "
         ]
       }
     ]

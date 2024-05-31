@@ -7,6 +7,7 @@ const criteriaSchema = z.object({
 
 export const occurrencesCriteriaSchema = z.object({
   id: z.number().positive(),
+  group: z.string(),
   criteria: criteriaSchema.array(),
 });
 
