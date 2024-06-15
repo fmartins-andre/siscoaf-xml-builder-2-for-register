@@ -14,30 +14,40 @@ type UseHandleSubmit = {
 
 export function useHandleSubmit({ form }: UseHandleSubmit) {
   const onValid: SubmitHandler<IFormSiscoaf> = (data) => {
-    const builder = new XMLBuilder({
-      format: true,
-      ignoreAttributes: false,
-      attributeNamePrefix: "@",
-    });
+    try {
+      const builder = new XMLBuilder({
+        format: true,
+        ignoreAttributes: false,
+        attributeNamePrefix: "@",
+      });
 
-    const xmlContent = builder.build(data);
-    console.info("xml:\n", xmlContent);
+      const xmlContent = builder.build(data);
+      console.info("xml:\n", xmlContent);
 
-    const xmlFile = new Blob([xmlContent], { type: "text/plain" });
-    const downloadUrl = window.URL.createObjectURL(xmlFile);
-    const link = document.createElement("a");
-    link.href = downloadUrl;
-    link.setAttribute("download", `${data.LOTE.OCORRENCIAS["@ID"]}.xml`);
-    document.body.appendChild(link);
-    link.click();
-    link.parentNode?.removeChild(link);
+      const xmlFile = new Blob([xmlContent], { type: "text/plain" });
+      const downloadUrl = window.URL.createObjectURL(xmlFile);
+      const link = document.createElement("a");
+      link.href = downloadUrl;
+      link.setAttribute("download", `${data.LOTE.OCORRENCIAS["@ID"]}.xml`);
+      document.body.appendChild(link);
+      link.click();
+      link.parentNode?.removeChild(link);
 
-    form.reset(formDefaultValues);
-    toast.success("XML gerado com sucesso!");
+      form.reset(formDefaultValues);
+      toast.success("XML gerado com sucesso!");
+    } catch (error) {
+      console.info("form data:\n", data);
+      console.error("on submit error:\n", error);
+
+      toast.error("Oops... Houve um erro inesperado ", {
+        description:
+          "Por favor informe este problema ao administrador do sistema. Código: ERR001",
+      });
+    }
   };
 
   const onInvalid: SubmitErrorHandler<IFormSiscoaf> = (error) => {
-    console.error(error);
+    console.error("form errors:\n", error);
     toast.error("Oops... Corrija os problemas do formulário");
   };
 

@@ -136,12 +136,14 @@ export const formSiscoafSchema = z
       });
     }
   })
-  .transform((args) =>
-    produce((draft) => {
+  .transform((args) => {
+    const getNewArgs = produce((draft) => {
       draft.LOTE.OCORRENCIAS["@ID"] =
         args.LOTE.OCORRENCIAS.OCORRENCIA.NumOcorrencia;
-    }, args),
-  );
+    }, args);
+
+    return getNewArgs();
+  });
 
 export type IFormSiscoafRelatedPerson = z.input<typeof envolvidoSchema>;
 export type IFormSiscoaf = z.input<typeof formSiscoafSchema>;
