@@ -4,10 +4,10 @@ import { addressRouter } from "@/api/address/address.server";
 import { addressEndpoints } from "@/api/address/address.endpoints";
 import { occurrencesRouter } from "@/api/occurrences/occurrences.server";
 import { occurrencesEndpoints } from "@/api/occurrences/occurrences.endpoints";
-import { relatedPeopleRouter } from "./api/related-people/related-people.server";
-import { relatedPeopleEndpoints } from "./api/related-people/related-people.endpoints";
-import { registerEndpoints } from "./api/register/register.endpoints";
-import { registerRouter } from "./api/register/register.server";
+import { relatedPeopleRouter } from "@/api/related-people/related-people.server";
+import { relatedPeopleEndpoints } from "@/api/related-people/related-people.endpoints";
+import { registerEndpoints } from "@/api/register/register.endpoints";
+import { registerRouter } from "@/api/register/register.server";
 
 const app = express();
 

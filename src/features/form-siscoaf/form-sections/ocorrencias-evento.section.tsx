@@ -23,8 +23,8 @@ export function OcorrenciasEventoSection() {
 
   return (
     <section className="flex flex-col gap-8">
-      {criteriaGroups.map((criteria) => (
-        <section className="flex flex-col flex-wrap gap-4">
+      {criteriaGroups.map((criteria, index) => (
+        <section className="flex flex-col flex-wrap gap-4" key={index}>
           <div className="flex flex-wrap justify-between">
             <span className="text-xl">{criteria[0].group}</span>
           </div>

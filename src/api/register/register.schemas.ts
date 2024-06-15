@@ -1,4 +1,3 @@
-// import { UF } from "@/api/address/address.schemas";
 import {
   RelatedPersonPublicServantType,
   RelatedPersonRelationshipType,
