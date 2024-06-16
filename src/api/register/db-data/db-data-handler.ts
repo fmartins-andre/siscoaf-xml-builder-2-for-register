@@ -15,7 +15,8 @@ interface People extends RowDataPacket {
 
 interface Occurrence extends RowDataPacket {
   VlCred: string | null;
-  eventDate: string | null;
+  DtInicio: string | null;
+  DtFim: string | null;
 }
 
 export async function dbDataHandler(occurrenceNumber: string) {
@@ -32,7 +33,8 @@ export async function dbDataHandler(occurrenceNumber: string) {
   await connection.end();
 
   const VlCred = occurrenceRows?.[0]?.VlCred ?? null;
-  const eventDate = occurrenceRows?.[0]?.eventDate ?? null;
+  const DtInicio = occurrenceRows?.[0]?.DtInicio ?? null;
+  const DtFim = occurrenceRows?.[0]?.DtFim ?? null;
 
   const people = peopleRows.map((person) => ({
     ...person,
@@ -41,8 +43,8 @@ export async function dbDataHandler(occurrenceNumber: string) {
 
   const result = registerDataSchema.safeParse({
     VlCred,
-    DtInicio: eventDate,
-    DtFim: eventDate,
+    DtInicio,
+    DtFim,
     ENVOLVIDOS: { ENVOLVIDO: people.length ? people : null },
   });
 

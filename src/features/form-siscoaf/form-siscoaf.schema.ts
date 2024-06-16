@@ -4,10 +4,11 @@ import {
   RelatedPersonRelationshipType,
 } from "@/api/related-people/related-people.schemas";
 import { dateToPtBrString } from "@/lib/date-methods";
-import { removeAccents } from "@/lib/string-methods";
+import { dateBrToIso, removeAccents } from "@/lib/string-methods";
 import { z } from "zod";
 import { produce } from "immer";
 import { isCNPJ, isCPF } from "validation-br";
+import { isBefore } from "date-fns";
 
 const REQUIRED_MESSAGE = "Obrigatório";
 
@@ -124,6 +125,21 @@ export const formSiscoafSchema = z
       ctx.addIssue({
         code: z.ZodIssueCode.invalid_date,
         message: REQUIRED_MESSAGE,
+        path: ["LOTE.OCORRENCIAS.OCORRENCIA.DtFim"],
+      });
+    }
+
+    if (
+      !!args.LOTE.OCORRENCIAS.OCORRENCIA.DtFim &&
+      !!args.LOTE.OCORRENCIAS.OCORRENCIA.DtInicio &&
+      isBefore(
+        new Date(dateBrToIso(args.LOTE.OCORRENCIAS.OCORRENCIA.DtFim)),
+        new Date(dateBrToIso(args.LOTE.OCORRENCIAS.OCORRENCIA.DtInicio)),
+      )
+    ) {
+      ctx.addIssue({
+        code: z.ZodIssueCode.custom,
+        message: "Data final inferior à data inicial",
         path: ["LOTE.OCORRENCIAS.OCORRENCIA.DtFim"],
       });
     }

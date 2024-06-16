@@ -39,6 +39,8 @@ export function useHandleRegisterOnBlur({ form }: UseHandleRegisterOnBlur) {
           protocolData.ENVOLVIDOS.ENVOLVIDO ??
             formDefaultValues.LOTE.OCORRENCIAS.OCORRENCIA.ENVOLVIDOS.ENVOLVIDO,
         );
+
+        form.clearErrors();
       } catch (error) {
         toast.warning("Sem informações!", {
           description: "O número informado não retornou dados.",
