@@ -4,6 +4,8 @@ import { UseFormReset, UseFormReturn } from "react-hook-form";
 import { IFormSiscoaf, formSiscoafSchema } from "../form-siscoaf.schema";
 import { xmlParserOptions } from "./xml-parser-options";
 import { toast } from "sonner";
+import { produce } from "immer";
+import { inputMask } from "@/lib/input-mask";
 
 type UseHandleLoadXml = {
   form: UseFormReturn<IFormSiscoaf>;
@@ -37,7 +39,19 @@ const onLoadFile =
       if (!validateData.success) throw new Error("Conteúdo do XML é inválido");
 
       console.info("data:\n", data);
-      reset(data);
+
+      const getValidData = produce((draft) => {
+        // garante formatação do VlrCred
+        const VlrCred = (data as IFormSiscoaf).LOTE.OCORRENCIAS.OCORRENCIA
+          .VlCred;
+
+        draft.LOTE.OCORRENCIAS.OCORRENCIA.VlCred = inputMask.currency(
+          Number(VlrCred) || VlrCred,
+          "R$",
+        );
+      }, data as IFormSiscoaf);
+
+      reset(getValidData());
 
       toast.success("XML importado com sucesso!");
     } catch (error) {

@@ -59,15 +59,15 @@ const ocorrenciaSchema = z.object({
     .transform((arg) => removeAccents(arg.substring(0, 100)).toUpperCase()),
   AgUF: z.nativeEnum(UF).nullable(),
   VlCred: z.string().transform((arg, ctx) => {
-    const decimalRegex = /^\d+([.,]\d+)*$/;
-    const sanitizedValue = arg.replace(/[^\d.,]/g, "");
     const numericValue = Number(
-      sanitizedValue.replace(".", "").replace(",", "."),
+      arg
+        .replace(/[^\d.,]/g, "")
+        .replace(/\./g, "")
+        .replace(/,/g, "."),
     );
 
     switch (true) {
-      case !sanitizedValue:
-      case !decimalRegex.test(sanitizedValue): {
+      case isNaN(numericValue): {
         ctx.addIssue({
           code: z.ZodIssueCode.custom,
           message: "Valor inválido",
@@ -86,7 +86,7 @@ const ocorrenciaSchema = z.object({
       }
 
       default:
-        return sanitizedValue;
+        return numericValue.toString().replace(".", ",");
     }
   }),
   CPFCNPJCom: cpfCnpjSchema,
