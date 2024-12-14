@@ -93,8 +93,7 @@ const ocorrenciaSchema = z.object({
   Det: z
     .string()
     .min(1, REQUIRED_MESSAGE)
-    .max(200)
-    .transform((arg) => removeAccents(arg).toUpperCase()),
+    .transform((arg) => removeAccents(arg)),
   ENQUADRAMENTOS: z.object({
     CodEnq: z.number().array().min(1, REQUIRED_MESSAGE),
   }),
